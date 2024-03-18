@@ -5,7 +5,7 @@ export const setRootEl = (el) => {
   rootEl = el;
 };
 
-export const setRoot = (routes) => {
+export const setRoots = (routes) => {
   if (typeof routes === "object") {
     if (routes["/error"]) {
       ROUTES = routes;
@@ -54,9 +54,9 @@ export const navigateTo = (pathname, props = {}) => {
   // render the view with the pathname and props
 };
 
-export const onURLChange = (location) => {
-  const urlSearch = window.location.search;
-  const newProps = queryStringToObject(urlSearch);
+export const onURLChange = () => {
+  const pathname = window.location.pathname;
+  const newProps = queryStringToObject(window.location.search);
   renderView(pathname, newProps);
   // parse the location for the pathname and search params
   // convert the search params to an object

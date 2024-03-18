@@ -22,7 +22,7 @@ import { Home } from "./views/Home.js";
 import { Error } from "./views/Error.js";
 import { ChatIndividual } from "./views/ChatIndividual.js";
 import { ChatGrupal } from "./views/ChatGrupal.js";
-import { setRootEl, setRoutes, onURLChange } from "./router.js";
+import { setRootEl, setRoots, onURLChange } from "./router.js";
 
 const routes = {
   "/home": Home,
@@ -34,7 +34,7 @@ const routes = {
 window.addEventListener("DOMContentLoaded", (e) => {
   const root = document.getElementById("root")
   setRootEl(root);
-  setRoutes(routes);
+  setRoots(routes);
   onURLChange(e.currentTarget.location.pathname);
 });
 
