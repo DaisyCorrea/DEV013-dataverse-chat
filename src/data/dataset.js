@@ -364,7 +364,6 @@ export default [
       duration: "1h 22m",
       releaseYear: "2020",
       genders: "Aventura, Fantasía",
-      genders: "Aventura, Fantasía",
       boxOfficeRevenue: "$842 mil USD en taquilla.",
     },
   },
