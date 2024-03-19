@@ -1,5 +1,11 @@
-export function ChatIndividual(props) {
-  const viewEl = document.createElement("div");
-  viewEl.textContent = "Chat Individual";
-  return viewEl;
+import dataset from "../data/dataset";
+import { navigateTo } from "../router";
+import { footer } from "../components/Footer";
+
+export const ChatIndividual = () => {
+  const viewIndividual = document.createElement("div");
+  viewIndividual.setAttribute("class", "chat-individual");
+  footer();
+  
+  return viewIndividual;
 }
