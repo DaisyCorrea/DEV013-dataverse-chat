@@ -1,4 +1,4 @@
-export const renderItems = (data) => {
+export const cards = (data) => {
   const list = document.createElement("ul");
   data.forEach((film) => {
     const card = document.createElement("li");
@@ -22,7 +22,7 @@ export const renderItems = (data) => {
       <li itemtype="releaseYear"><b>Estreno: </b>${film.facts["releaseYear"]}</li>
       <li itemtype="duration"><b>Duración: </b>${film.facts["duration"]}</li>
       <li itemtype="boxOfficeRevenue"><b>Recaudación: </b>${film.facts["boxOfficeRevenue"]}</li>
-      <li itemtype"shortDescription"><b>Sinopsis: </b>${film.shortDescription}</li>
+      <li itemtype="shortDescription"><b>Sinopsis: </b>${film.shortDescription}</li>
       <li itemtype="description"><b>Descripción: </b>${film.description}</li>
       </div>
       </ul>

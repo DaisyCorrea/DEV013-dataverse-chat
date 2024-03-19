@@ -1,7 +1,8 @@
 export const footer = () => {
   const footerEl = document.createElement("footer");
+  footerEl.setAttribute("id", "footer")
   footerEl.innerHTML = `
-  <footer>Copyright @ 2024 Addis Pérez & Daisy Correa</footer>
+  Copyright @ 2024 Addis Pérez & Daisy Correa
   `
   return footerEl;
 }

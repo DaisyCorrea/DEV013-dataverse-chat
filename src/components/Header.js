@@ -1,7 +1,6 @@
 export const header = () => {
   const headerEl = document.createElement("header");
   headerEl.innerHTML = `
-  <header>
   <div class="header">
     <img
       src="https://raw.githubusercontent.com/Addis-cx/DEV013-dataverse/html/src/Imagenes/Totoro-transparente.png"
