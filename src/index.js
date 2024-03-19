@@ -18,14 +18,14 @@ TODO:
 3.- Invocar el router para renderizar la vista correcta.
 */
 
-import { Home } from "./views/Home.js";
-import { Error } from "./views/Error.js";
-import { ChatIndividual } from "./views/ChatIndividual.js";
-import { ChatGrupal } from "./views/ChatGrupal.js";
-import { setRootEl, setRoots, onURLChange } from "./router.js";
+import { Home } from "../views/Home.js";
+import { Error } from "../views/Error.js";
+import { ChatIndividual } from "../views/ChatIndividual.js";
+import { ChatGrupal } from "../views/ChatGrupal.js";
+import { setRootEl, setRoutes, onURLChange } from "../router.js";
 
 const routes = {
-  "/home": Home,
+  "/": Home,
   "/error": Error,
   "/chatIndividual": ChatIndividual,
   "/chatGrupal": ChatGrupal,
@@ -34,10 +34,10 @@ const routes = {
 window.addEventListener("DOMContentLoaded", (e) => {
   const root = document.getElementById("root")
   setRootEl(root);
-  setRoots(routes);
+  setRoutes(routes);
   onURLChange(e.currentTarget.location.pathname);
 });
 
 window.addEventListener("popstate", (e) => {
   onURLChange(e.currentTarget.location.pathname);
-};
+});

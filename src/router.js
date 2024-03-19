@@ -1,3 +1,4 @@
+
 let ROUTES = {};
 let rootEl = "";
 
@@ -5,7 +6,7 @@ export const setRootEl = (el) => {
   rootEl = el;
 };
 
-export const setRoots = (routes) => {
+export const setRoutes = (routes) => {
   if (typeof routes === "object") {
     if (routes["/error"]) {
       ROUTES = routes;
@@ -29,17 +30,17 @@ const renderView = (pathname, props = {}) => {
   // Limpiar root
   const root = rootEl;
   root.innerHTML = "";
-  const queryString = location.search;
-  //
-  const urlParams = queryStringToObject(queryString);
-  const combinedProps = { ...props, ...urlParams };
+  let template;
 
   if (ROUTES[pathname]) {
-    const template = ROUTES[pathname](combinedProps);
-    root.appendChild(template);
+    template = ROUTES[pathname];
   } else {
-    root.appendChild(ROUTES["/error"]());
+    template = ROUTES["/error"];
   }
+  
+  const elementView = template(props);
+  root.appendChild(elementView);
+
 };
 
 export const navigateTo = (pathname, props = {}) => {
