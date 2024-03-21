@@ -1,4 +1,3 @@
-
 let ROUTES = {};
 let rootEl = "";
 

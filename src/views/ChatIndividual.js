@@ -1,8 +1,8 @@
-import dataset from "../data/dataset";
-import { navigateTo } from "../router";
-import { footer } from "../components/Footer";
+import data from "../data/dataset.js";
+import { navigateTo } from "../router.js";
+import { footer } from "../components/Footer.js";
 
-export const ChatIndividual = () => {
+export const chatIndividual = () => {
   const viewIndividual = document.createElement("div");
   viewIndividual.setAttribute("class", "chat-individual");
   footer();

@@ -8,7 +8,7 @@ import { filterGenders, sortFilms, computeStats } from "../Lib/dataFunctions.js"
 
 const newData = [...data];
 
-export const Home = () => {
+export const home = () => {
   const viewHome = document.createElement("main");
   viewHome.appendChild(header());
   viewHome.appendChild(cards(newData));
@@ -16,4 +16,4 @@ export const Home = () => {
   viewHome.appendChild(menuSection());
 
   return viewHome;
-}
+};
