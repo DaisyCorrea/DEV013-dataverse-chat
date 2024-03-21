@@ -3,9 +3,8 @@ export const menuSection = () => {
   menuEl.innerHTML = `
   <div class="superButtons">
       <label for="filter" class="buttons">
-      <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-straight/css/uicons-solid-straight.css'>
-        <select data-testid="select-filter" name="genders" id="filter">
-          <option value="genres">Filtro</option>
+        <select data-testid="select-filter" name="genders" class="filter fas">
+          <option value="genres" class="optionIcon fas">&#xf086; Filtro</option>
           <option value="Acción">Acción</option>
           <option value="Aventura">Aventura</option>
           <option value="Bélico">Bélico</option>
@@ -23,8 +22,8 @@ export const menuSection = () => {
       </label>
 
       <label for="order" class="buttons">
-        <select data-testid="select-filter" name="sortOrder" id="order">
-          <option value="todos">Ordenar por:</option>
+        <select data-testid="select-filter" name="sortOrder" class="order fas">
+          <option value="todos" class="fas">&#xf160 Ordenar por:</option>
           <option value="asc">A-Z</option>
           <option value="desc">Z-A</option>
         </select>
@@ -36,7 +35,7 @@ export const menuSection = () => {
 
       <label for="stats" class="button2">
         <button class="statsButton">
-            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+        <i class="fas fa-chart-column"></i>Estadísticas
         </button>
       </label>
     </div>

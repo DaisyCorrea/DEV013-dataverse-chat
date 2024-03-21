@@ -11,7 +11,7 @@ export const cards = (data) => {
       </ul>
       <label for="popUp"> </label>
       <button class="cardsBtn"><b>Ver más</b></button>
-      <button class="chatBtn"><img src="https://iconos8.es/icon/22050/speech-bubble" alt= "Icono, burbuja de chat"></button>
+      <button class="chatBtn"><i class="fas fa-comment"></i></button>
       </div>
       <section class="windowModal hiden">
       <h2>${film.name}</h2>
@@ -29,6 +29,7 @@ export const cards = (data) => {
       </ul>
       </div>
       <button class="closeWindow">Ver menos</button>
+      <button class="chatBtn"><i class="fas fa-comment"></i></button>
       </section>
       <div class="modalFondo hiden"></div>
       `;
