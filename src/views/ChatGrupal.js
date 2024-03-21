@@ -1,6 +1,6 @@
-import dataset from "../data/dataset";
-import { navigateTo } from "../router";
-import { footer } from "../components/Footer";
+import data from "../data/dataset.js";
+import { navigateTo } from "../router.js";
+import { footer } from "../components/Footer.js";
 
 export const chatGrupal = () => {
   const viewGrupal = document.createElement("div");
