@@ -12,5 +12,346 @@
 }
 * {
     margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Cabin Condensed', 'Merriweather', 'sans-serif';
     background-color: var(--sky-blue);
+    position: relative;
+}
+.header {
+    display: flex;
+    background-color: var(--blue);
+    text-align: center;
+}
+h1 {
+    display: contents;
+    color: var(--white);
+    font-family: sans-serif;
+}
+.movie-search {
+    background-color: var(--white);
+    border: var(--pastel-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 9999rem;
+}
+.visual {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    text-align: center;
+}
+.noVisual {
+    display: none;
+}
+.visual {
+    background-color: var(--white);
+    color: var(--dark-grey);
+	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+	font-family: Merriweather;
+}
+li {
+    list-style: none;
+}
+.cardsBtn {
+    font-family: Merriweather;
+	text-align: center;
+	background-color: var(--white);
+	color: var(--dark-grey);
+	border: 0.1rem solid var(--soft-blue);
+}
+.cardsBtn:hover {
+    background-color: var(--soft-blue);
+    border: var(--grey);
+    color: var(--white);
+}
+.windowModal {
+    background-color: var(--soft-blue);
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h2 {
+    font-family: Merriweather;
+    display: flex;
+    justify-content: center;
+    text-shadow: -1.4px 0 var(--dark-grey), 0 1.4px var(--dark-grey),
+    1.4px 0 var(--dark-grey), 0 -1.4px var(--dark-grey);
+    color: var(--white);
+}
+.modalCard {
+    display: flex;
+    justify-content: center;
+    background-color: var(--white);
+}
+.closeWindow {
+    font-family: Merriweather;
+    background-color: var(--soft-grey);
+    color: var(--dark-grey);
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+.closeWindow:hover {
+    background-color: var(--sky-blue);
+    border: var(--grey);
+    color: var(--black);
+} 
+.card {
+    font-family: Merriweather;
+    text-align: left;
+}
+.modalCard > img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
+}
+.modalFondo .statsFondo {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+.hiden {
+    display: none;
+}
+.superButtons{
+    display: flex;
+    justify-content: space-around;
+}
+[data-testid="select-filter"] {
+    text-align: center;
+    font-family: Merriweather;
+    background-color: var(--soft-grey);
+    color: var(--dark-grey);
+    border: var(--grey);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+[data-testid="select-filter"]:hover {
+    background-color: var(--soft-blue);
+    border: var(--pastel-blue);
+    color: var(--white);
+}
+.cleanerButton {
+    font-family: Merriweather;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--soft-blue);
+    border-color: var(--pastel-blue);
+    color: var(--white);
+    border: var(--grey);
+}
+.cleanerButton:hover {
+    background-color: var(--soft-grey);
+    border: var(--grey);
+    color: var(--dark-grey);
+}
+.statsButton {
+    background-color: var(--soft-blue);
+    border-color: var(--pastel-blue);
+    color: var(--white);
+    border: var(--grey);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.statsButton > img {
+    height: auto;
+}
+.statsButton:hover {
+    background-color: var(--soft-grey);
+    border: var(--grey);
+    color: var(--dark-grey);
+}
+.statsWindow {
+    z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white)
+}
+h3 {
+    font-family: Merriweather;
+    display: flex;
+    justify-content: center;
+    color: var(--dark-grey);
+}
+p {
+    font-family: Merriweather;
+    text-align: left;
+}
+.closeStats {
+    display: block;
+    font-family: Merriweather;
+    background-color: var(--sky-blue);
+    color: var(--dark-grey);
+    border: none;
+    cursor: pointer;
+}
+footer {
+    font-family: Merriweather;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width: 450px) {
+  /* Aquí comienza el estilo de Header */
+
+.header {
+    width: 100%;
+    height: 100%;
+}
+.logo {
+    width: 18vw;
+    height: 10vh;
+}
+.title {
+    margin: 0.5rem 2rem 0 0;
+}
+h1 {
+    font-size: 0.7em;
+}
+.movie-search {
+    width: 45vw;
+	height: 4vh;
+	font-size: 0.7em;
+	padding-left: 0.5rem;
+	margin: 0.8rem 0.3rem 0 0.1rem;
+}
+/* Aquí finaliza el header */
+/* Aquí comienza cards */
+.visual {
+    padding: 0.5rem;
+	margin: 1rem;
+	width: 10rem;
+	height: 18.5rem;
+	font-size: 0.6em;
+    border-radius: 0.5rem;
+}
+.visual > img {
+    width: 9.5rem;
+    height: 13rem;
+    border-radius: 0.6rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
+}
+/* ul {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin: 1rem 0 0.8rem 0;
+} */
+.cardsBtn {
+    width: 4.5rem;
+	height: 1.7rem;
+	border-radius: 0.5rem;
+    margin: 1.5rem 0 0 0;
+	font-size: 0.6rem;
+	font-family: Merriweather;
+}
+.windowModal {
+    width: 46rem;
+    height: 35rem;
+    border-radius: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+    margin: 0.6rem 0 0 0;
+}
+.modalCard {
+    width: 44rem;
+    height: 27rem;
+    border-radius: 2rem;
+    margin: 0.6rem 1rem;
+}
+.closeWindow {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 0.7rem;
+}
+.closeWindow:hover {
+    background-color: var(--sky-blue);
+    border: var(--grey);
+    color: var(--black);
+} 
+.card {
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+.modalCard > img {
+    width: 20rem;
+    height: 25rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+/* Aquí finaliza el estilo cards */
+/* Aquí comienza el estilo filters */
+.superButtons{
+    margin: 1rem 0 0 0;
+}
+[data-testid="select-filter"] {
+    width: 12.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+[data-testid="select-filter"]:hover {
+    background-color: var(--soft-blue);
+    border: var(--pastel-blue);
+    color: var(--white);
+}
+.cleanerButton {
+    width: 12.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.statsButton {
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.statsButton > img {
+    width: 3rem;
+    height: auto;
+}
+.statsWindow {
+    width: 30rem;
+    height: 20rem;
+    border-radius: 3rem;
+}
+h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+p {
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+.closeStats {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 0.7rem;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
+}
+/* Aquí finaliza el estilo filters */
+/* Aquí comienza el estilo footer */
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    font-size: 1rem;
+/* Aquí finaliza el estilo footer */
+}
 }

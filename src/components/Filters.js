@@ -3,8 +3,9 @@ export const menuSection = () => {
   menuEl.innerHTML = `
   <div class="superButtons">
       <label for="filter" class="buttons">
+      <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-straight/css/uicons-solid-straight.css'>
         <select data-testid="select-filter" name="genders" id="filter">
-          <option value="genres">Filtrar por:</option>
+          <option value="genres">Filtro</option>
           <option value="Acción">Acción</option>
           <option value="Aventura">Aventura</option>
           <option value="Bélico">Bélico</option>
@@ -35,10 +36,7 @@ export const menuSection = () => {
 
       <label for="stats" class="button2">
         <button class="statsButton">
-          <img
-            src="https://raw.githubusercontent.com/Addis-cx/DEV013-dataverse/html/src/Imagenes/estadisticas-transparente.png"
-            alt="Icono de estadisticas"
-          />
+            <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
         </button>
       </label>
     </div>
