@@ -1,5 +1,6 @@
 export const cards = (data) => {
   const list = document.createElement("ul");
+  list.className = "list";
   data.forEach((film) => {
     const card = document.createElement("li");
     card.innerHTML += `
@@ -12,6 +13,13 @@ export const cards = (data) => {
       <label for="popUp"> </label>
       <button class="cardsBtn"><b>Ver más</b></button>
       <button class="chatBtn"><i class="fas fa-comment"></i></button>
+        <img class= "imagenCard" src="${film.imageUrl}" alt="Afiche de la película ${film.name}">
+        <div class="nameDescription"
+          <p1  itemtype="name"><b>${film.name}</b></p2><br>
+          <p2 itemtype="genders"><b>Género: ${film.facts["genders"]}</b></p3>
+        </div>
+        <label for="popUp"> </label>
+        <button class="cardsBtn"><b>Ver más</b></button>
       </div>
       <section class="windowModal hiden">
       <h2>${film.name}</h2>

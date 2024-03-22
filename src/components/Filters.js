@@ -1,10 +1,12 @@
 export const menuSection = () => {
-  const menuEl = document.createElement("div");
+  const menuEl = document.createElement("nav");
   menuEl.innerHTML = `
-  <div class="superButtons">
-      <label for="filter" class="buttons">
-        <select data-testid="select-filter" name="genders" class="filter fas">
-          <option value="genres" class="optionIcon fas">&#xf086; Filtro</option>
+  <input type="checkbox" id="menú">
+  <label for="menú" class="buttons">☰</label>
+    <ul>
+      <li>
+        <select data-testid="select-filter" name="genders">
+          <option value="genres">Filtro</option>
           <option value="Acción">Acción</option>
           <option value="Aventura">Aventura</option>
           <option value="Bélico">Bélico</option>
@@ -19,35 +21,33 @@ export const menuSection = () => {
           <option value="Infantil">Infantil</option>
           <option value="Misterio">Misterio</option>
         </select>
-      </label>
+    </li>
 
-      <label for="order" class="buttons">
-        <select data-testid="select-filter" name="sortOrder" class="order fas">
-          <option value="todos" class="fas">&#xf160 Ordenar por:</option>
-          <option value="asc">A-Z</option>
-          <option value="desc">Z-A</option>
-        </select>
-      </label>
+    <li> 
+        <button class="statsButton">Estadísticas</button>
+    </li>
+    
+    <li> 
+      <select data-testid="select-filter" name="sortOrder">
+      <option value="todos">Ordenar por:</option>
+      <option value="asc">A-Z</option>
+      <option value="desc">Z-A</option>
+      </select>
+    </li>
+    <li> 
+      <button class="cleanerButton" type="button">Limpiar</button>
+    </li>
 
-      <label for="button" class="button2">
-        <button class="cleanerButton" type="button">Limpiar</button>
-      </label>
-
-      <label for="stats" class="button2">
-        <button class="statsButton">
-        <i class="fas fa-chart-column"></i>Estadísticas
-        </button>
-      </label>
-    </div>
+  </ul>
 
     <div class="statsWindow noVisual">
-      <h3>Estadísticas de Géneros</h3>
-      <p class="statsMovie"></p>
-      <label for="button">
-        <button class="closeStats"><b>Ver menos</b></button>
-      </label>
+    <h3>Estadísticas de Géneros</h3>
+    <p class="statsMovie"></p>
+    <label for="button">
+    <button class="closeStats"><b>Ver menos</b></button>
+    </label>
     </div>
     <div class="statsFondo noVisual"></div>
-  `
+    `;
   return menuEl;
 };

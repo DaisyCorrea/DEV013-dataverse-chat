@@ -12,8 +12,8 @@ export const home = () => {
   const viewHome = document.createElement("main");
   viewHome.appendChild(header());
   viewHome.appendChild(cards(newData));
-  viewHome.appendChild(footer());
   viewHome.appendChild(menuSection());
+  viewHome.appendChild(footer());
 
   return viewHome;
 };
