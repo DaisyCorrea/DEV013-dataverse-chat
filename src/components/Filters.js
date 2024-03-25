@@ -3,9 +3,9 @@ export const menuSection = () => {
   menuEl.innerHTML = `
   <input type="checkbox" id="menú">
   <label for="menú" class="buttons">☰</label>
-    <ul>
-      <li>
-        <select data-testid="select-filter" name="genders">
+    <ul class="menúIcon">
+      <li class="contentMenú">
+        <select data-testid="select-filter" name="genders" class="optionMenu">
           <option value="genres">Filtro</option>
           <option value="Acción">Acción</option>
           <option value="Aventura">Aventura</option>
@@ -23,19 +23,20 @@ export const menuSection = () => {
         </select>
     </li>
 
-    <li> 
-        <button class="statsButton">Estadísticas</button>
+    <li class="contentMenú"> 
+        <button class="statsButton optionMenu">Estadísticas</button>
     </li>
     
-    <li> 
-      <select data-testid="select-filter" name="sortOrder">
+    <li class="contentMenú"> 
+      <select data-testid="select-filter" name="sortOrder" class="optionMenu">
       <option value="todos">Ordenar por:</option>
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
       </select>
     </li>
-    <li> 
-      <button class="cleanerButton" type="button">Limpiar</button>
+
+    <li class="contentMenú"> 
+      <button class="cleanerButton optionMenu" type="button">Limpiar</button>
     </li>
 
   </ul>
@@ -47,7 +48,7 @@ export const menuSection = () => {
     <button class="closeStats"><b>Ver menos</b></button>
     </label>
     </div>
-    <div class="statsFondo noVisual"></div>
+    <div class="modalFondo noVisual"></div>
     `;
   return menuEl;
 };
