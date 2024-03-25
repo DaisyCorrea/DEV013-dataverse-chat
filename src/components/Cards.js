@@ -1,6 +1,5 @@
 export const cards = (data) => {
   const list = document.createElement("ul");
-  list.setAttribute("id", "list");
   list.className = "list";
   data.forEach((film) => {
     const card = document.createElement("li");

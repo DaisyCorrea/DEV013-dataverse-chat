@@ -12,8 +12,8 @@ const routes = {
 };
 
 window.addEventListener("DOMContentLoaded", (e) => {
-  const root = document.getElementById("root")
-  setRootEl(root);
+  const rootElement = document.getElementById("root")
+  setRootEl(rootElement);
   setRoutes(routes);
   onURLChange(e.currentTarget.location.pathname);
 });
@@ -21,3 +21,4 @@ window.addEventListener("DOMContentLoaded", (e) => {
 window.addEventListener("popstate", (e) => {
   onURLChange(e.currentTarget.location.pathname);
 });
+

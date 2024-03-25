@@ -5,7 +5,7 @@ export const menuSection = () => {
   <label for="menú" class="buttons">☰</label>
     <ul class="menúIcon">
       <li class="contentMenú">
-        <select data-testid="select-filter" name="genders" class="optionMenu">
+        <select data-testid="select-filter" name="genders" id="filter" class="optionMenu">
           <option value="genres">Filtro</option>
           <option value="Acción">Acción</option>
           <option value="Aventura">Aventura</option>
@@ -24,17 +24,17 @@ export const menuSection = () => {
     </li>
 
     <li class="contentMenú"> 
-        <button class="statsButton optionMenu">Estadísticas</button>
-    </li>
-    
-    <li class="contentMenú"> 
-      <select data-testid="select-filter" name="sortOrder" class="optionMenu">
+      <select data-testid="select-filter" name="sortOrder" id="order" class="optionMenu">
       <option value="todos">Ordenar por:</option>
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
       </select>
     </li>
 
+    <li class="contentMenú"> 
+        <button class="statsButton optionMenu">Estadísticas</button>
+    </li>
+    
     <li class="contentMenú"> 
       <button class="cleanerButton optionMenu" type="button">Limpiar</button>
     </li>
@@ -48,7 +48,7 @@ export const menuSection = () => {
     <button class="closeStats"><b>Ver menos</b></button>
     </label>
     </div>
-    <div class="modalFondo noVisual"></div>
+    <div class="modalFondo statsFondo noVisual"></div>
     `;
   return menuEl;
 };
