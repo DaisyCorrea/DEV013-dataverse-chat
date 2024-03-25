@@ -17,180 +17,117 @@
 body {
     font-family: 'Cabin Condensed', 'Merriweather', 'sans-serif';
     background-color: var(--sky-blue);
-    /*position: relative;*/
+    position: relative;
 }
-
 .header {
     display: flex;
     background-color: var(--blue);
     text-align: center;
-    margin-top: auto;
-    width: auto;
-    height: 7rem;
 }
-
-.title {
-    /*titulo Studio Ghibli*/  
-    position: relative;
-    left: 2rem;
-    top: 2.3rem; 
+h1 {
+    color: var(--white);
+    font-family: sans-serif;
 }
-  
 .movie-search {
     background-color: var(--white);
     border: var(--pastel-blue);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem;
-    width: 12rem;
-    height: 2rem;
-    position: relative;
-    right: -40rem;
-    top: 3rem;
+    border-radius: 9999rem;
 }
-
 .noVisual {
     display: none;
 }
 .visual {
-    /*FONDO TARJETAS, TAMAÑO ESCRITORIO*/
     background-color: var(--white);
-    color: var(--dark-grey);
+    text-align: center;
 	box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 	font-family: Merriweather;
-    font-size: 0.6em;
-    text-align: center;
-    box-sizing: border-box;
+}
+ul {
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    width: 18rem;
-    height: 28rem;
-    margin: 2.5rem;
-    border-radius: 1rem;
+    justify-content: space-around;
 }
+li {
+    list-style: none;
+    color: var(--dark-grey);
 
-.imagenCard{
-    margin-top: 1rem;
-    width: 16rem;
-    height: 20rem;
-    display: flex;
-    border-radius: 0.8rem;
-    /*flex-direction: column;
-    justify-content: center;*/
 }
-
-.nameDescription{
-/* titulo tarjeta vista escritorio*/
-    margin-top: -0.1rem;
-    font-family: Merriweather;
-    font-size: 1rem;
-    text-align: center;
-}
-
-.list{
-    width: inherit;
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .cardsBtn {
     font-family: Merriweather;
 	text-align: center;
 	background-color: var(--white);
-    color: var(--dark-grey);
+	color: var(--dark-grey);
 	border: 0.1rem solid var(--soft-blue);
-    width: 5.5rem;
-    height: 1.7rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    position: relative;
-    bottom: 0.3rem;
-    left: -5rem;
 }
 .cardsBtn:hover {
     background-color: var(--soft-blue);
     border: var(--grey);
     color: var(--white);
 }
+.chatBtn {
+	background-color: var(--white);
+	color: var(--blue);
+	border: 0.1rem solid var(--soft-blue);
+    border-radius: 0.7rem;
+}
+.chatBtn:hover {
+    background-color: var(--soft-blue);
+    border: 0.1rem solid var(--soft-blue);
+    color: var(--white);
+}
 .windowModal {
-    /*fondo celeste del modal - vista escritorio*/
     background-color: var(--soft-blue);
     z-index: 2;
-    /*transform: translate(-50%, -50%);*/
-    width: 33rem;
-    height: 28rem;
-    padding: 0.89rem;
-    border-radius: 2rem;
-    position: relative;
-    left:35%;
+    position: fixed;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 h2 {
-  /* letras título modal vista escritorio*/
     font-family: Merriweather;
-    font-size: 1.7rem;
     display: flex;
     justify-content: center;
-    /*text-shadow: -1.4px 0 var(--dark-grey), 0 1.4px var(--dark-grey),
+    text-shadow: -1.4px 0 var(--dark-grey), 0 1.4px var(--dark-grey),
     1.4px 0 var(--dark-grey), 0 -1.4px var(--dark-grey);
     color: var(--white);
-    padding-top: 5rem;*/
-    
 }
 .modalCard {
-    /*fondo blanco sobre la tarjeta vista escritorio*/
     display: flex;
     justify-content: center;
     background-color: var(--white);
-    width: 31rem;
-    height: 21rem;
-    border-radius: 1.5rem;
-    margin-top: 0.2rem;
-    padding: 1rem;
-}   
-.closeWindow {
-/*botón para cerrar modal (descripción)*/
-    font-family: Merriweather;
-    font-size: 0.91rem;
-    background-color: var(--soft-grey);
-    color: var(--dark-grey);
-    border: none;
-    cursor: pointer;
-    width: fit-content;
-    padding: 8px 18px;
+}
+.closeWindow  {
+    background-color: var(--soft-blue);
+	color: var(--white);
+	border: 0.1rem solid var(--white);
     border-radius: 0.7rem;
-    margin-top: 0.5rem;
-    margin-left: 3rem;
 }
 .closeWindow:hover {
-    background-color: var(--sky-blue);
-    border: var(--grey);
-    color: var(--black);
-} 
+    background-color: var(--blue);
+    border: 0.1rem solid var(--soft-blue);
+    color: var(--soft-blue);
+}
+.chatBtnModal {
+    background-color: var(--soft-blue);
+	color: var(--white);
+	border: 0.1rem solid var(--white);
+    border-radius: 0.7rem;
+}
+.chatBtnModal:hover {
+    background-color: var(--blue);
+    border: 0.1rem solid var(--soft-blue);
+    color: var(--soft-blue);
+}
 .card {
-/*descripción completa modal*/
-    font-size: 0.82rem;
     font-family: Merriweather;
     text-align: left;
-    position: relative;
-    top: 0.2rem;
-    left: -1rem;
 }
 .modalCard > img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
-    width: 12rem;
-    height: 18rem;
-    margin-top: 0.8rem;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-items: center
 }
-.modalFondo .statsFondo {
+.modalFondo {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -205,50 +142,36 @@ h2 {
 .hiden {
     display: none;
 }
-.superButtons{
-    display: flex;
-    justify-content: space-around;
+ul.menúIcon {
+    display: none;
+} 
+input#menú:checked ~ ul.menúIcon {
+    display: block;
+} 
+input#menú {
+    display: none;
 }
-[data-testid="select-filter"] {
+label.buttons {
+    box-sizing: border-box;
+	display: inline-block;
+	border: 2px solid var(--white);
+	color: var(--white);
+	border-radius: 5px;
+	font-weight: bold;
+	text-align: center;
+	user-select: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+li.contentMenú {
+    display: block;
+}
+.optionMenu {
     text-align: center;
-    font-family: Merriweather;
-    background-color: var(--soft-grey);
-    color: var(--dark-grey);
-    border: var(--grey);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-[data-testid="select-filter"]:hover {
-    background-color: var(--soft-blue);
-    border: var(--pastel-blue);
-    color: var(--white);
-}
-.cleanerButton {
-    font-family: Merriweather;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: var(--soft-blue);
-    border-color: var(--pastel-blue);
-    color: var(--white);
-    border: var(--grey);
-}
-.cleanerButton:hover {
-    background-color: var(--soft-grey);
-    border: var(--grey);
-    color: var(--dark-grey);
-}
-.statsButton {
-    background-color: var(--soft-blue);
-    border-color: var(--pastel-blue);
-    color: var(--white);
-    border: var(--grey);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.statsButton > img {
-    height: auto;
-}
-.statsButton:hover {
-    background-color: var(--soft-grey);
-    border: var(--grey);
-    color: var(--dark-grey);
+	font-family: Merriweather;
+	color: var(--dark-grey);
+	background: var(--pastel-blue);
+	list-style: none;
+    border: none;
 }
 .statsWindow {
     z-index: 2;
@@ -294,161 +217,97 @@ footer {
     height: 10vh;
 }
 .title {
-  /*titulo Studio Ghibli*/  
-    margin: 0.5rem 2rem 0 0;
-    position: relative;
-    left: 1rem;
-    top: 1.4rem;  
+	margin: 0.8rem 0 0 -0.6rem;
 }
 h1 {
-    font-size: 0.7rem;
+    font-size: 0.6em;
 }
 .movie-search {
-    width: 6.5rem;
-	height: 1.8rem;
-	font-size: 0.7em;
+    width: 45vw;
+	height: 3.5vh;
+	font-size: 0.6em;
 	padding-left: 0.5rem;
-    position: relative;
-    left: 6rem;
-    top: 2.8rem;  
+	margin: 1rem -18.9rem 0 0;
 }
 /* Aquí finaliza el header */
 /* Aquí comienza cards */
 .visual {
-    margin: 1.5rem; /*/ separa las tarjetas*/
+    padding: 0.5rem;
 	width: 10rem;
-	height: 18rem;
-	display: flex;
-    flex-direction: column;
-    justify-content: center;
+	height: 20rem;
+    margin: 0 0 1rem 0;
+	font-size: 0.6em;
+    border-radius: 0.5rem;
 }
 .visual > img {
-    width: 9.5rem;
-    height: 12rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
-    margin-left: 0.3rem;
+	width: 9rem;
+	height: 13rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
 }
-
-.nameDescription{
-    /* titulo tarjeta vista celular*/
-        font-family: Merriweather;
-        font-size: 0.6rem;
-        text-align: center;
-}        
-.imagenCard{
-    display: flex;
-    margin-top: -0.2rem;
-    
+ul {
+    margin: 0.5rem 0 0 0;
 }
-
-.list{
-    width: inherit;
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .cardsBtn {
     width: 4.5rem;
 	height: 1.7rem;
 	border-radius: 0.5rem;
-    margin: 1.5rem 0 0 0;
 	font-size: 0.6rem;
-	font-family: Merriweather;
-    position: relative;
-    top: 7rem;
-    left: -10rem;
+}
+.chatBtn {
+    width: 2rem;
+	height: 1.7rem;
+	border-radius: 0.5rem;
+	margin: 0.8rem 0 0 0;
 }
 .windowModal {
-    /*fondo celeste del modal*/
-    width: 25.5rem;
-    height: 26rem;
-    border-radius: 2rem;
-    position: relative;
-    left: -1.9rem; 
+	width: 20rem;
+	height: 21rem;
+	border-radius: 0.5rem;
 }
-
 h2 {
-    /* letras título modal*/
-    font-size: 1.2rem;
-    margin: 1rem;
+    font-size: 1.3em;
+	margin: 0.5rem 0 0 0;
 }
 .modalCard {
-    /*fondo blanco sobre la tarjeta*/
-    width: 24.5rem;
-    height: 18rem;
-    border-radius: 1.5rem;
-    margin-left: -0.5rem;
-}
-
-.closeWindow {
-    /*botón para cerrar modal (descripción)*/
-    font-size: 1rem;
-    padding: 8px 18px;
-    border-radius: 0.7rem;
-    margin-top: 1.1rem;
-    margin-left: 2rem;;
-}
-.closeWindow:hover {
-    background-color: var(--sky-blue);
-    border: var(--grey);
-    color: var(--black);
-} 
-.card {
-    /*descripción completa modal*/
-    font-size: 0.65rem;
-        
+    width: 19rem;
+	height: 16rem;
+	border-radius: 0.8rem;
+	margin: 0.5rem;
 }
 .modalCard > img {
-    width: 8.5rem;
-    height: 15rem;
-    margin: 0.2rem;
-    border-radius: 1rem;
+    width: 19rem;
+	height: 14.8rem;
+	border-radius: 0.8rem;
+	margin: 0.5rem;
+}
+.closeWindow {
+    font-size: 0.8rem;
+	width: 6rem;
+	height: 2.3rem;
+	margin: 0.2rem 0 0 6rem;
+}
+.chatBtnModal {
+	width: 2.5rem;
+	height: 2.3rem;
+}
+.card {
+    font-size: 0.6rem;
+    margin: 0.5rem;
 }
 /* Aquí finaliza el estilo cards */
 /* Aquí comienza el estilo filters */
-.superButtons{
-    margin: 1rem 0 0 0;
+label.buttons {
+	width: 1.7rem;
+	height: 1.7rem;
+	font-size: 1em;
+	margin: 0.3rem;
 }
-[data-testid="select-filter"] {
-    width: 12.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-}
-[data-testid="select-filter"]:hover {
-    background-color: var(--soft-blue);
-    border: var(--pastel-blue);
-    color: var(--white);
-}
-.cleanerButton {
-    width: 12.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-}
-.statsButton {
-    width: 7rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-}
-.statsButton > img {
-    width: 3rem;
-    height: auto;
-}
-.statsWindow {
-    width: 30rem;
-    height: 20rem;
-    border-radius: 3rem;
+.optionMenu {
+	width: 10rem;
+	height: 1.5rem;
+	margin: 0.2rem 0 0 0;
+	font-size: 0.7em;
 }
 h3 {
     font-size: 1.5rem;
@@ -470,7 +329,137 @@ p {
 /* Aquí finaliza el estilo filters */
 /* Aquí comienza el estilo footer */
 footer {
-    bottom: 0;
+
+    width: 100%;
+    height: 2rem;
+    font-size: 0.7rem;
+/* Aquí finaliza el estilo footer */
+}
+}
+@media only screen and (min-width: 500px) {
+/* Aquí empieza el header */
+.header {
+    width: 100%;
+    height: 100%;
+}
+.logo {
+    width: 12vw;
+	height: 16vh;
+}
+.title {
+  /*titulo Studio Ghibli*/  
+    margin: 1.4rem 0 0 -1rem;
+}
+h1 {
+    font-size: 1.2em;
+}
+.movie-search {
+	width: 40vw;
+	height: 5.5vh;
+	font-size: 1em;
+	padding-left: 1.5rem;
+	margin: 2rem -63rem 0 0;
+}
+
+/* Aquí finaliza el header */
+/* Aquí comienza cards */
+.visual {
+    padding: 0.5rem;
+	margin: 1rem;
+	width: 14rem;
+	height: 26.8rem;
+	font-size: 0.83em;
+	border-radius: 0.5rem;
+}
+.visual > img {
+    width: 12rem;
+	height: 18rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.425);
+}
+ul {
+    margin: 1rem 0 0.8rem 0;
+}
+.cardsBtn {
+    width: 6rem;
+	height: 2rem;
+	border-radius: 0.5rem;
+	margin: 1rem 0 0 0;
+	font-size: 1rem;
+	font-family: Merriweather;
+}
+.chatBtn {
+    width: 3rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+.windowModal {
+    width: 46rem;
+    height: 35rem;
+    border-radius: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+    margin: 0.6rem 0 0 0;
+}
+.modalCard {
+    width: 44rem;
+    height: 27rem;
+    border-radius: 2rem;
+    margin: 0.6rem 1rem;
+}
+.closeWindow {
+    width: 7rem;
+	height: 2.4rem;
+    margin: 0 0 0 20rem;
+}
+.chatBtnModal {
+    width: 3rem;
+	height: 2.4rem;
+}
+.card {
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+.modalCard > img {
+    width: 20rem;
+    height: 25rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+/* Aquí finaliza el estilo cards */
+/* Aquí comienza el estilo filters */
+label.buttons {
+    width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.5em;
+    margin: 0.5rem;
+}
+.optionMenu {
+    width: 18rem;
+	height: 2.5rem;
+	margin: 0.5rem 0 0 0;
+}
+h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+p {
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+.closeStats {
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 0.7rem;
+    width: fit-content;
+    margin: auto;
+    margin-top: 2rem;
+}
+/* Aquí finaliza el estilo filters */
+/* Aquí comienza el estilo footer */
+footer {
     width: 100%;
     height: 5rem;
     font-size: 1rem;

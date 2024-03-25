@@ -11,9 +11,9 @@ const newData = [...data];
 export const home = () => {
   const viewHome = document.createElement("main");
   viewHome.appendChild(header());
+  viewHome.appendChild(menuSection());
   viewHome.appendChild(cards(newData));
   viewHome.appendChild(footer());
-  viewHome.appendChild(menuSection());
 
   return viewHome;
 };

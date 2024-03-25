@@ -1,17 +1,20 @@
 export const cards = (data) => {
   const list = document.createElement("ul");
+  list.setAttribute("id", "list");
   list.className = "list";
   data.forEach((film) => {
     const card = document.createElement("li");
+    card.setAttribute("id", "card");
     card.innerHTML += `
       <div class="visual"> 
-        <img class= "imagenCard" src="${film.imageUrl}" alt="Afiche de la película ${film.name}">
-        <div class="nameDescription"
-          <p1  itemtype="name"><b>${film.name}</b></p2><br>
-          <p2 itemtype="genders"><b>Género: ${film.facts["genders"]}</b></p3>
-        </div>
-        <label for="popUp"> </label>
-        <button class="cardsBtn"><b>Ver más</b></button>
+      <img src="${film.imageUrl}" alt="Afiche de la película ${film.name}">
+      <ul itemscope itemtype="nausicaa-del-valle-del-viento">
+      <li itemtype="name"><b>${film.name}</b></li>
+      <li itemtype="genders"><b>Género: ${film.facts["genders"]}</b></li>
+      </ul>
+      <label for="popUp"> </label>
+      <button class="cardsBtn"><b>Ver más</b></button>
+      <button class="chatBtn"><i class="fas fa-comment"></i></button>
       </div>
       <section class="windowModal hiden">
       <h2>${film.name}</h2>
@@ -29,6 +32,7 @@ export const cards = (data) => {
       </ul>
       </div>
       <button class="closeWindow">Ver menos</button>
+      <button class="chatBtnModal"><i class="fas fa-comment"></i></button>
       </section>
       <div class="modalFondo hiden"></div>
       `;
