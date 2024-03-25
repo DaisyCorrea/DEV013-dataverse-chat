@@ -173,44 +173,6 @@ li.contentMenú {
 	list-style: none;
     border: none;
 }
-/* [data-testid="select-filter"] {
-    text-align: center;
-    font-family: Merriweather;
-    background-color: var(--soft-grey);
-    color: var(--dark-grey);
-    border: var(--grey);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-[data-testid="select-filter"]:hover {
-    background-color: var(--soft-blue);
-    border: var(--pastel-blue);
-    color: var(--white);
-}
-.cleanerButton {
-    font-family: Merriweather;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: var(--soft-blue);
-    border-color: var(--pastel-blue);
-    color: var(--white);
-    border: var(--grey);
-}
-.cleanerButton:hover {
-    background-color: var(--soft-grey);
-    border: var(--grey);
-    color: var(--dark-grey);
-} 
-.statsButton {
-    background-color: var(--soft-blue);
-    border-color: var(--pastel-blue);
-    color: var(--white);
-    border: var(--grey);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.statsButton:hover {
-    background-color: var(--soft-grey);
-    border: var(--grey);
-    color: var(--dark-grey);
-}*/
 .statsWindow {
     z-index: 2;
     position: fixed;
@@ -318,7 +280,6 @@ h2 {
 	height: 14.8rem;
 	border-radius: 0.8rem;
 	margin: 0.5rem;
-}
 }
 .closeWindow {
     font-size: 0.8rem;
