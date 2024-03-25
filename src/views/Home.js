@@ -24,6 +24,7 @@ export const home = () => {
   const gendersFilms = viewHome.querySelector("#filter");
   const orderFilms = viewHome.querySelector("#order");
   const statsButton = viewHome.querySelector(".statsButton");
+  const apiButton = viewHome.querySelector(".statsButton");
   const statsWindow = viewHome.querySelector(".statsWindow");
   const statsMovie = viewHome.querySelector(".statsMovie");
   const closeStats = viewHome.querySelector(".closeStats");

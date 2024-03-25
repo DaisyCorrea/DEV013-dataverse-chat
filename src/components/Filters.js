@@ -34,7 +34,9 @@ export const menuSection = () => {
     <li class="contentMenú"> 
         <button class="statsButton optionMenu">Estadísticas</button>
     </li>
-    
+    <li class="contentMenú"> 
+        <button class="apiButton optionMenu">Api Key</button>
+    </li>
     <li class="contentMenú"> 
       <button class="cleanerButton optionMenu" type="button">Limpiar</button>
     </li>
