@@ -4,6 +4,7 @@ import { header } from "../components/Header.js";
 import { cards } from "../components/Cards.js";
 import { menuSection } from "../components/Filters.js";
 import { footer } from "../components/Footer.js";
+import { apiK } from "../views/APIKEY.js";
 import {
   filterGenders,
   sortFilms,
@@ -24,7 +25,7 @@ export const home = () => {
   const gendersFilms = viewHome.querySelector("#filter");
   const orderFilms = viewHome.querySelector("#order");
   const statsButton = viewHome.querySelector(".statsButton");
-  const apiButton = viewHome.querySelector(".statsButton");
+  const apiButton = viewHome.querySelector(".apiButton");
   const statsWindow = viewHome.querySelector(".statsWindow");
   const statsMovie = viewHome.querySelector(".statsMovie");
   const closeStats = viewHome.querySelector(".closeStats");
@@ -70,15 +71,6 @@ export const home = () => {
     movieCards.appendChild(cards(filmAsc));
   });
 
-  cleanerButton.addEventListener("click", function () {
-    const newData = [...data];
-    movieSearch.value = "";
-    movieCards.innerHTML = "";
-    gendersFilms.value = "genres";
-    orderFilms.value = "todos";
-    movieCards.appendChild(cards([...newData]));
-  });
-
   statsButton.addEventListener("click", function () {
     statsMovie.textContent = computeStats(newData);
     statsWindow.classList.remove("noVisual");
@@ -89,6 +81,19 @@ export const home = () => {
     statsWindow.classList.add("noVisual");
     statsFondo.classList.add("noVisual");
     return closeStats;
+   });
+
+  apiButton.addEventListener("click", function () {
+    console.log(navigateTo("/api", {}));
+  });
+
+  cleanerButton.addEventListener("click", function () {
+    const newData = [...data];
+    movieSearch.value = "";
+    movieCards.innerHTML = "";
+    gendersFilms.value = "genres";
+    orderFilms.value = "todos";
+    movieCards.appendChild(cards([...newData]));
   });
 
   return viewHome;
