@@ -1,14 +1,14 @@
-import { home } from "../views/Home.js";
-import { error } from "../views/Error.js";
-import { chatIndividual } from "../views/ChatIndividual.js";
-import { api } from "./components/API.js";
-import { setRootEl, setRoutes, onURLChange } from "../router.js";
+import { home } from "./views/Home.js";
+import { error } from "./views/Error.js";
+import { chatIndividual } from "./views/ChatIndividual.js";
+import { apiK } from "./views/APIKEY.js";
+import { setRootEl, setRoutes, onURLChange } from "./router.js";
 
 const routes = {
   "/": home,
   "/error": error,
   "/chatIndividual": chatIndividual,
-  "/api": api,
+  "/api": apiK,
 };
 
 window.addEventListener("DOMContentLoaded", (e) => {
