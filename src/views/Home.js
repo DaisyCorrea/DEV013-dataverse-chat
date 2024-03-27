@@ -4,13 +4,11 @@ import { header } from "../components/Header.js";
 import { cards } from "../components/Cards.js";
 import { menuSection } from "../components/Filters.js";
 import { footer } from "../components/Footer.js";
-import { apiK } from "../views/APIKEY.js";
 import {
   filterGenders,
   sortFilms,
   computeStats,
 } from "../Lib/dataFunctions.js";
-
 
 export const home = () => {
   const viewHome = document.createElement("main");
@@ -20,7 +18,7 @@ export const home = () => {
   viewHome.appendChild(cards(newData));
   viewHome.appendChild(footer());
 
-  const movieCards = viewHome.querySelector(".list")
+  const movieCards = viewHome.querySelector(".list");
   const movieSearch = viewHome.querySelector(".movie-search");
   const gendersFilms = viewHome.querySelector("#filter");
   const orderFilms = viewHome.querySelector("#order");
@@ -33,7 +31,6 @@ export const home = () => {
   const cleanerButton = viewHome.querySelector(".cleanerButton");
 
   movieCards.appendChild(cards(newData));
-
 
   movieSearch.addEventListener("input", function () {
     const results = [];
@@ -81,10 +78,10 @@ export const home = () => {
     statsWindow.classList.add("noVisual");
     statsFondo.classList.add("noVisual");
     return closeStats;
-   });
+  });
 
   apiButton.addEventListener("click", function () {
-    console.log(navigateTo("/api", {}));
+    navigateTo("/api", {});
   });
 
   cleanerButton.addEventListener("click", function () {
