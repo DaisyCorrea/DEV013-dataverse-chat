@@ -4,8 +4,8 @@ import { getApiKey, setApiKey } from '../src/Lib/apiKey.js';
 
 const testKey = "thisIsKey"
 
-describe('getApiKey', () => {
-  it('debería regresar correctamente el valor de la API Key', () => {
+describe('Mi función saca la API KEY guardada en el localStorage', () => {
+  test('Si el usuario ingreso la clave, debe devolver esa clave', () => {
     localStorage.setItem("apiKey", testKey);
     expect(getApiKey()).toBe(testKey)
   });
