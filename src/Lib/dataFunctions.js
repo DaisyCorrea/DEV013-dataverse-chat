@@ -42,7 +42,7 @@ export const computeStats = (data) => {
     }
   );
 
-  const resultOne = ((100*stats)/data.length).toFixed(2);
-  console.log(resultOne)
-  return statsText;
+  //const resultOne = ((100*stats)/data.length).toFixed(2);
+  //console.log(resultOne)
+  return stats;
 };
