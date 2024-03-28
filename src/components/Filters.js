@@ -2,7 +2,7 @@ export const menuSection = () => {
   const menuEl = document.createElement("nav");
   menuEl.innerHTML = `
   <input type="checkbox" id="menú">
-  <label for="menú" class="buttons">☰</label>
+  <label for="menú" class="buttons"><i class="fas fa-bars"></i></label>
     <ul class="menúIcon">
       <li class="contentMenú">
         <select data-testid="select-filter" name="genders" id="filter" class="optionMenu">
@@ -25,17 +25,17 @@ export const menuSection = () => {
 
     <li class="contentMenú"> 
       <select data-testid="select-filter" name="sortOrder" id="order" class="optionMenu">
-      <option value="todos">Ordenar por:</option>
+      <option value="todos"><i class="fas fa-arrow-down-wide-short"></i> Ordenar por:</option>
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
       </select>
     </li>
 
     <li class="contentMenú"> 
-        <button class="statsButton optionMenu">Estadísticas</button>
+        <button class="statsButton optionMenu"><i class="fas fa-chart-column"></i> Estadísticas</button>
     </li>
     <li class="contentMenú"> 
-        <button class="apiButton optionMenu">Api Key</button>
+        <button class="apiButton optionMenu"><i class="fas fa-key"> </i>Api Key</button>
     </li>
     <li class="contentMenú"> 
       <button class="cleanerButton optionMenu" type="button">Limpiar</button>
