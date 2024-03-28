@@ -2,16 +2,18 @@
 
 import { getApiKey, setApiKey } from '../src/Lib/apiKey.js';
 
-describe('getApiKey', () => {
+const testKey = "thisIsKey"
 
-  it('debería devolver el valor de la API Key', () => {
-    // Desarrolla el test correspondiente aquí
+describe('getApiKey', () => {
+  it('debería regresar correctamente el valor de la API Key', () => {
+    localStorage.setItem("apiKey", testKey);
+    expect(getApiKey()).toBe(testKey)
   });
 });
 
 describe('setApiKey', () => {
 
   it('debería establecer correctamente la API Key', () => {
-   // Desarrolla el test correspondiente aquí
+    
   });
 });

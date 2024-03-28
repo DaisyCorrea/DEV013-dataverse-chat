@@ -205,6 +205,27 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/*Vista de error escritorio*/
+
+
+.errorImagen {
+    font-family: Merriweather;
+    font-size: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorMessage {
+    font-family: Merriweather;
+    font-size:small;
+    display: flex;
+    text-justify: center;
+    align-items: center;
+}
+
+
 @media only screen and (max-width: 450px) {
   /* Aquí comienza el estilo de Header */
 
@@ -335,7 +356,29 @@ footer {
     font-size: 0.7rem;
 /* Aquí finaliza el estilo footer */
 }
+
+/* Vista de error movil*/
+
+.errorImagen {
+    font-family: Merriweather;
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.errorMessage {
+    font-family: Merriweather;
+    font-size:small;
+    display: flex;
+    text-justify: center;
+    align-items: center;
+}
+/*hasta aquí vista de error movil*/
+}
+
+
+
 @media only screen and (min-width: 500px) {
 /* Aquí empieza el header */
 .header {
@@ -465,4 +508,23 @@ footer {
     font-size: 1rem;
 /* Aquí finaliza el estilo footer */
 }
+
+/* Vista de error*/
+
+.errorImagen {
+    font-family: Merriweather;
+    font-size: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorMessage {
+    font-family: Merriweather;
+    font-size:xx-large;
+    display: flex;
+    text-justify: center;
+    align-items: center;
+}
+
 }
