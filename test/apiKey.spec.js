@@ -19,6 +19,14 @@ describe('getApiKey', () => {
 describe('setApiKey', () => {
 
   it('debería establecer correctamente la API Key', () => {
-    
+    const newKey = "456789";
+    setApiKey(newKey);
+    expect(localStorage.getItem("apiKey")).toBe(newKey);
+  });
+
+  it('si no hay una Apikey guardada', () => {
+    const newKey = "";
+    setApiKey(newKey);
+    expect(localStorage.getItem("apiKey")).toBe(newKey);
   });
 });
