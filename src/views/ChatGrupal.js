@@ -1,5 +1,3 @@
-//import data from "../data/dataset.js";
-//import { navigateTo } from "../router.js";
 import { footer } from "../components/Footer.js";
 
 export const chatGrupal = () => {
