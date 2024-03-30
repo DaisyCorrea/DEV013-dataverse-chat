@@ -25,33 +25,29 @@ export const queryStringToObject = (queryString) => {
   return queryParams; // Devolver el objeto
 };
 
-const renderView = (pathname, props = {}) => {
-  // Limpiar root
+export const renderView = (pathname, props = {}) => {
   const root = rootEl;
+  let view;
   root.innerHTML = "";
-  let template;
-
   if (ROUTES[pathname]) {
-    template = ROUTES[pathname];
+    view = ROUTES[pathname](props);
   } else {
-    template = ROUTES["/error"];
+    view = ROUTES["/error"](props);
   }
-  
-  const elementView = template(props);
-  root.appendChild(elementView);
-
+  root.appendChild(view);
 };
 
 export const navigateTo = (pathname, props = {}) => {
-  if (props.id) {
-    const newURL = `${pathname}?id=${props.id}`;
-    window.history.pushState({}, "", newURL);
-  } else {
-    window.history.pushState({}, "", pathname);
-  }
+  const searchParams = new URLSearchParams();
+  Object.entries(props).forEach(([key, value]) => {
+    searchParams.set(key, value);
+  });
+  const queryString = searchParams.toString();
+
+  const URLvisited = `${pathname}${queryString ? `?${queryString}` : ""}`;
+  // console.log("guarda", window.location.origin + pathname);
+  history.pushState({ pathname, props }, "", URLvisited);
   renderView(pathname, props);
-  // update window history with pushState
-  // render the view with the pathname and props
 };
 
 export const onURLChange = () => {

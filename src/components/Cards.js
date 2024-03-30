@@ -1,4 +1,8 @@
+import { navigateTo } from "../router.js";
+import { chatIndividual } from "../views/ChatIndividual.js";
+
 export const cards = (data) => {
+  const rootEl = document.root;
   const list = document.createElement("ul");
   list.className = "list";
   data.forEach((film) => {
@@ -6,14 +10,14 @@ export const cards = (data) => {
     card.setAttribute("id", "card");
     card.innerHTML += `
       <div class="visual"> 
-      <img src="${film.imageUrl}" alt="Afiche de la película ${film.name}">
+      <img src="${film.imageUrl}" alt="Afiche de la película ${film.name}" class="imgFilm">
       <ul itemscope itemtype="nausicaa-del-valle-del-viento">
-      <li itemtype="name"><b>${film.name}</b></li>
+      <li itemtype="name" class="nameFilm"><b>${film.name}</b></li>
       <li itemtype="genders"><b>Género: ${film.facts["genders"]}</b></li>
       </ul>
       <label for="popUp"> </label>
       <button class="cardsBtn"><b>Ver más</b></button>
-      <button class="chatBtn"><i class="fas fa-comment"></i></button>
+      <button class="chatBtn viewChat" data-filmid="${film.name}"><i class="fas fa-comment"></i></button>
       </div>
       <section class="windowModal hiden">
       <h2>${film.name}</h2>
@@ -31,7 +35,7 @@ export const cards = (data) => {
       </ul>
       </div>
       <button class="closeWindow">Ver menos</button>
-      <button class="chatBtnModal"><i class="fas fa-comment"></i></button>
+      <button class="chatBtnModal viewChat"><i class="fas fa-comment"></i></button>
       </section>
       <div class="modalFondo hiden"></div>
       `;
@@ -41,6 +45,7 @@ export const cards = (data) => {
     const buttonWindow = card.querySelector(".cardsBtn");
     const fondoModal = card.querySelector(".modalFondo");
     const closeWindow = card.querySelector(".closeWindow");
+    const viewChatIndividual = card.querySelector(".viewChat");
 
     buttonWindow.addEventListener("click", function () {
       popUpWindow.classList.remove("hiden");
@@ -51,6 +56,15 @@ export const cards = (data) => {
       popUpWindow.classList.add("hiden");
       fondoModal.classList.add("hiden");
       return closeWindow;
+    });
+
+    viewChatIndividual.addEventListener("click", function () {
+      const chatView = chatIndividual(film);
+      chatView.innerHTML = "";
+
+     rootEl.appendChild(chatView);
+
+      navigateTo(`/chatIndividual?id=${film.name}`);
     });
   });
   return list;

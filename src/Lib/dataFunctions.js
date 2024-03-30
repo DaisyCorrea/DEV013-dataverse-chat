@@ -19,6 +19,7 @@ export const sortFilms = (data, sortBy, sortOrder) => {
 
 export const computeStats = (data) => {
   const movies = data.flatMap((movie) => movie.facts.genders.split(", "));
+  const totalMovies = movies.length;
   const stats = movies.reduce(
     (acc, genreFil) => {
       genreFil = genreFil.trim();
@@ -42,7 +43,14 @@ export const computeStats = (data) => {
     }
   );
 
-  //const resultOne = ((100*stats)/data.length).toFixed(2);
-  //console.log(resultOne)
-  return stats;
+  let genre; 
+
+  for (genre in stats) {
+    stats[genre] = ((stats[genre] / totalMovies) * 100).toFixed(2) + "%";
+  }
+
+  const statsText = Object.entries(stats).map(([genre, count]) => `${genre}: ${count}`).join("\n");
+  return statsText;
 };
+
+

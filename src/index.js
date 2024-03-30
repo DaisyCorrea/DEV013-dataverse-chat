@@ -6,9 +6,9 @@ import { setRootEl, setRoutes, onURLChange } from "./router.js";
 
 const routes = {
   "/": home,
-  "/error": error,
   "/chatIndividual": chatIndividual,
   "/api": apiK,
+  "/error": error,
 };
 
 window.addEventListener("DOMContentLoaded", (e) => {
