@@ -8,8 +8,9 @@ export const error = () => {
    
   const imgError = document.createElement ("img");
   imgError.className = "errorImagen";
-  imgError.src = "https://www.figma.com/file/P6swyzLKv5ExPpb0joeEvl/STUDIO-GHIBLI?type=design&node-id=1312-532&mode=design&t=coJFrhZJm7KNdrip-4";
+  imgError.src = "Images/totoro-paraguas.png";
   imgError.alt = "ERROR 404";
+  imgError.innerHTML = "ERROR 404";
 
   viewEl.appendChild(imgError);
   
