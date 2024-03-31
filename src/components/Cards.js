@@ -1,8 +1,4 @@
-import { navigateTo } from "../router.js";
-import { chatIndividual } from "../views/ChatIndividual.js";
-
 export const cards = (data) => {
-  const rootEl = document.root;
   const list = document.createElement("ul");
   list.className = "list";
   data.forEach((film) => {
@@ -45,7 +41,6 @@ export const cards = (data) => {
     const buttonWindow = card.querySelector(".cardsBtn");
     const fondoModal = card.querySelector(".modalFondo");
     const closeWindow = card.querySelector(".closeWindow");
-    const viewChatIndividual = card.querySelector(".viewChat");
 
     buttonWindow.addEventListener("click", function () {
       popUpWindow.classList.remove("hiden");
@@ -58,14 +53,6 @@ export const cards = (data) => {
       return closeWindow;
     });
 
-    viewChatIndividual.addEventListener("click", function () {
-      const chatView = chatIndividual(film);
-      chatView.innerHTML = "";
-
-     rootEl.appendChild(chatView);
-
-      navigateTo(`/chatIndividual?id=${film.name}`);
-    });
   });
   return list;
 };
