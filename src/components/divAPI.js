@@ -5,7 +5,7 @@ export const api = () => {
   <h3>Api Key</h3>
   <p>Si quieres acceder al chat Individual, ingresa la Api Key</p>
   <div class="sectionApi">
-  <input type="text" class="inputApi" placeholder="Ingresa la Api Key"/>
+  <input type="text" class="inputApi" placeholder="Ingresa la Api Key">
   <button class="apiSaveButton">Guardar</button>
   <p>¿No tienes una Api Key? Haz click aquí</p>
   </div>

@@ -1,4 +1,8 @@
-export const cards = (data) => {
+import { navigateTo } from "../router.js";
+import { chatIndividual } from "../views/ChatIndividual.js";
+
+export const cards = (data, rootEl) => {
+
   const list = document.createElement("ul");
   list.className = "list";
   data.forEach((film) => {
