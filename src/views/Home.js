@@ -29,6 +29,7 @@ export const home = () => {
   const closeStats = viewHome.querySelector(".closeStats");
   const statsFondo = viewHome.querySelector(".statsFondo");
   const cleanerButton = viewHome.querySelector(".cleanerButton");
+  const chatButton = viewHome.querySelector(".chatBtn");
 
   movieCards.appendChild(cards(newData));
 
@@ -92,6 +93,10 @@ export const home = () => {
     orderFilms.value = "todos";
     movieCards.appendChild(cards([...newData]));
   });
+
+  chatButton.addEventListener("click", function() {
+    navigateTo("/chatIndividual", {});
+  })
 
   return viewHome;
 };
