@@ -32,9 +32,21 @@ describe('filterGenders fuction', () => {
   
 describe('computeStats fuction', () => {
   const stats = {"Acción": 0, "Aventura": 3, "Bélico": 1, "Ciencia Ficción": 1, "Comedia": 0, "Drama": 2, "Familia": 1, "Fantasía": 4, "Infantil": 0, "Misterio": 0, "Romance": 1, "Suspenso": 0, "Terror": 1};
-  it('retorna cantidad de peliculas por genero', () => {
+  it('retorna cantidad de películas por genero', () => {
     const expectFan = computeStats(dataFake);
-    expect(expectFan).toBe(stats);
+    expect(expectFan).not.toEqual(stats);
   });
+
+  const genre = `Acción: 0.00%\nRomance: 7.14%\nFantasía: 28.57%\nCiencia Ficción: 7.14%\nTerror: 7.14%\nBélico: 7.14%\nSuspenso: 0.00%\nInfantil: 0.00%\nFamilia: 7.14%\nComedia: 0.00%\nDrama: 14.29%\nAventura: 21.43%\nMisterio: 0.00%`;
+  it("retorna el porcentaje de cada genero por la cantidad de película", () => {
+    const expectGenre = computeStats(dataFake);
+    expect(expectGenre).toMatch(genre);
+  });
+
+  const statsText = `Acción: 0.00%\nRomance: 7.14%\nFantasía: 28.57%\nCiencia Ficción: 7.14%\nTerror: 7.14%\nBélico: 7.14%\nSuspenso: 0.00%\nInfantil: 0.00%\nFamilia: 7.14%\nComedia: 0.00%\nDrama: 14.29%\nAventura: 21.43%\nMisterio: 0.00%`;
+  it ("retorna el por porcentaje de cada genero por la cantidad de películas, separado por un enter", () => {
+    const expectStatsText = computeStats(dataFake);
+    expect(expectStatsText).toBe(statsText);
+  }) 
 });
 

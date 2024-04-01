@@ -1,4 +1,8 @@
+import { navigateTo } from "../router.js";
+import { chatIndividual } from "../views/ChatIndividual.js";
+
 export const cards = (data) => {
+
   const list = document.createElement("ul");
   list.className = "list";
   data.forEach((film) => {
@@ -41,16 +45,25 @@ export const cards = (data) => {
     const buttonWindow = card.querySelector(".cardsBtn");
     const fondoModal = card.querySelector(".modalFondo");
     const closeWindow = card.querySelector(".closeWindow");
-
-    buttonWindow.addEventListener("click", function () {
+    const viewChatIndividual = card.querySelector(".viewChat")
+    
+    buttonWindow.addEventListener("click", function() {
       popUpWindow.classList.remove("hiden");
       fondoModal.classList.remove("hiden");
       return buttonWindow;
     });
-    closeWindow.addEventListener("click", function () {
+    closeWindow.addEventListener("click", function() {
       popUpWindow.classList.add("hiden");
       fondoModal.classList.add("hiden");
       return closeWindow;
+    });
+    
+    viewChatIndividual.addEventListener("click", function() {
+      const chatView = chatIndividual(film);
+      console.log("🚀 ~ viewChatIndividual.addEventListener ~ chatIndividual(film):", chatIndividual(film))
+      chatView.innerHTML = "";
+      console.log("!film",film.name)
+      navigateTo(`/chatIndividual?id=${film.id}`);
     });
 
   });

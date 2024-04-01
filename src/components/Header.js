@@ -12,7 +12,7 @@ export const header = () => {
       <h1>STUDIO GHIBLI</h1>
     </div>
     <label for="input">
-      <input type="text" class="movie-search" placeholder="Buscar" />
+      <input type="text" class="movie-search" placeholder="Buscar">
     </label>
   </div>
   `

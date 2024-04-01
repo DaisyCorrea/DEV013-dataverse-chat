@@ -1,5 +1,5 @@
 import { returnHome } from "../components/ButtonHome.js";
-import { footer } from "../components/Footer.js";
+//import { footer } from "../components/Footer.js";
 
 export const error = () => {
   const viewEl = document.createElement("div");

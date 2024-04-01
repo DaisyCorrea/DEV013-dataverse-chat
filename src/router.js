@@ -19,6 +19,7 @@ export const setRoutes = (routes) => {
 export const queryStringToObject = (queryString) => {
   const urlParams = new URLSearchParams(queryString);
   const queryParams = {}; //// Convertir URLSearchParams a un objeto
+  console.log("🚀 ~ queryStringToObject ~ queryParams:", queryParams)
   for (const [key, value] of urlParams) {
     queryParams[key] = value;
   }
@@ -38,22 +39,36 @@ export const renderView = (pathname, props = {}) => {
 };
 
 export const navigateTo = (pathname, props = {}) => {
-  const searchParams = new URLSearchParams();
-  Object.entries(props).forEach(([key, value]) => {
-    searchParams.set(key, value);
-  });
-  const queryString = searchParams.toString();
+ history.pushState({}, "", pathname);
+ const apartRoot = pathname.split("?");
+ console.log(apartRoot, "cortar");
+ pathname = apartRoot[0];
+ console.log("🚀 ~ navigateTo ~ pathname:", pathname)
+ props = apartRoot[1];
+ const propsObject = queryStringToObject(props);
+ console.log("🚀 ~ navigateTo ~ propsObject:", propsObject)
+ 
 
-  const URLvisited = `${pathname}${queryString ? `?${queryString}` : ""}`;
-  // console.log("guarda", window.location.origin + pathname);
-  history.pushState({ pathname, props }, "", URLvisited);
-  renderView(pathname, props);
+  // const searchParams = new URLSearchParams();
+  // Object.entries(props).forEach(([key, value]) => {
+  //   console.log("🚀 ~ Object.entries ~ props:", props)
+  //   searchParams.set(key, value);
+  // });
+  // console.log("🚀 ~ navigateTo ~ searchParams:", searchParams)
+  // const queryString = searchParams.toString();
+  // console.log("🚀 ~ navigateTo ~ queryString:", queryString)
+
+  // const URLvisited = `${pathname}${queryString ? `?${queryString}` : ""}`;
+  // // console.log("guarda", window.location.origin + pathname);
+  // console.log("🚀 ~ navigateTo ~ URLvisited:", URLvisited)
+ // history.pushState({ pathname, props }, "", URLvisited);
+  renderView(pathname, propsObject);
 };
 
-export const onURLChange = () => {
-  const pathname = window.location.pathname;
+export const onURLChange = (location) => {
+  // const pathname = window.location.pathname;
   const newProps = queryStringToObject(window.location.search);
-  renderView(pathname, newProps);
+  renderView(location, newProps);
   // parse the location for the pathname and search params
   // convert the search params to an object
   // render the view with the pathname and object
