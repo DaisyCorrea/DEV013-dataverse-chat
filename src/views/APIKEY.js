@@ -1,5 +1,5 @@
 import { returnHome } from "../components/ButtonHome.js";
-import { api } from "../components/API.js";
+import { api } from "../components/divAPI.js";
 import { footer } from "../components/Footer.js";
 import { getApiKey, setApiKey } from "../Lib/apiKey.js";
 
