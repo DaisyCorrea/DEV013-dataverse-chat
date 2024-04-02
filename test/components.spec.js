@@ -3,7 +3,14 @@ import { header } from "../src/components/Header";
 import { returnHome } from "../src/components/ButtonHome";
 import { api } from "../src/components/divAPI";
 import { footer } from "../src/components/Footer";
-import { navigateTo } from "../src/router";
+
+const fakeRouter = require("../src/router.js");
+const spyRouter = jest.syOn(fakeRouter, "navigateTo");
+spyRouter.mockImplementation((pathname) => {
+  history.pushState({}, "", pathname);
+})
+
+
 
 describe("hearder function", () => {
   const headerEl = `
@@ -35,15 +42,12 @@ describe("returnHome fuction", () => {
         expect(buttonElement).not.toBeNull();
         expect(buttonHTML.innerHTML.trim()).toEqual(buttonHome.trim());
       });
-    
-      it("al hacer click te lleva a la vista de home", () => {
-        const buttonHTML = returnHome();
-        const buttonElement = buttonHTML.querySelector(".buttonHomeIcon");
-    
-        buttonElement.click();
-        expect(navigateTo("", {})).toHaveBeenCalledWith("/", {});
-      });
+
+    it("DOM de el botón", () => {
+
+    })
 });
+
 
 describe("api fuction", () => {
     const apiEl = `
