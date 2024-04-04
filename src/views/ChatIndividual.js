@@ -7,6 +7,7 @@ export const chatIndividual = (film) => {
     const viewIndividual = document.createElement("secction");
     viewIndividual.id = "chat-individual";
     const findFil = data.find((filmId) => filmId.id === film.id)
+    viewIndividual.appendChild(returnHome());
     viewIndividual.innerHTML = `
     <div class="headerChat">
     <img src=${findFil.imageUrl} alt="${findFil.name}" class="imgChat">
@@ -18,7 +19,7 @@ export const chatIndividual = (film) => {
     <button class="sendMes"><i class="fas fa-location-arrow"></i></button>
     </div>
     `
-    viewIndividual.appendChild(returnHome());
+  
     viewIndividual.appendChild(footer())
 
     const inputMessage = viewIndividual.querySelector(".inputChat");
@@ -51,6 +52,7 @@ export const chatIndividual = (film) => {
         }
         console.log(arrowButton);
     });
+
 
     return viewIndividual;
 };
