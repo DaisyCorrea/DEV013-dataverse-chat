@@ -1,18 +1,15 @@
-// src/lib/openAIApi.js
-
-// Importa la función para obtener la API KEY desde apiKey.js
 import { getApiKey } from "./apiKey.js";
 
-export const communicateWithOpenAI = (cardName, input) => {
+export const communicateWithOpenAI = async (cardName, input) => {
   //Aquí es donde debes implementar la petición con fetch o axios
   const api_key = getApiKey();
   const apiURL = "https://api.openai.com/v1/chat/completions";
 
-  const responseIA = fetch(apiURL, {
+  const responseIA = await fetch(apiURL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${api_key}`,
+      "Authorization": `Bearer ${api_key}`
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -28,5 +25,7 @@ export const communicateWithOpenAI = (cardName, input) => {
       ],
     }),
   });
-  return responseIA;
+
+  console.log("🚀 ~ communicateWithOpenAI ~ system:", responseIA);
+  // return system;
 };
