@@ -60,9 +60,7 @@ export const cards = (data) => {
     
     viewChatIndividual.addEventListener("click", function() {
       const chatView = chatIndividual(film);
-      console.log("🚀 ~ viewChatIndividual.addEventListener ~ chatIndividual(film):", chatIndividual(film))
       chatView.innerHTML = "";
-      console.log("!film",film.name)
       navigateTo(`/chatIndividual?id=${film.id}`);
     });
 
