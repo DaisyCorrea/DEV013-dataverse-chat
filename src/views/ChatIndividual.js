@@ -21,5 +21,38 @@ export const chatIndividual = (film) => {
     `
     viewIndividual.appendChild(returnHome());
     viewIndividual.appendChild(footer())
+
+    const inputMessage = viewIndividual.querySelector(".inputChat");
+    const arrowButton = viewIndividual.querySelector(".sendMes");
+    const continerChat = viewIndividual.querySelector(".conversationChat");
+
+    arrowButton.addEventListener("click", function() {
+        const contentInput = inputMessage.value;
+        
+        if(contentInput !== "") {
+
+            const bubbleUser = document.createElement("div");
+            const textBubble = document.createElement("p");
+            bubbleUser.className = "bubbleSpace";
+            textBubble.className = "messageUser"
+            textBubble.innerHTML = contentInput;
+            bubbleUser.appendChild(textBubble);
+            continerChat.appendChild(textBubble);
+            // contentInput.value = "";
+            
+            communicateWithOpenAI(contentInput, findFil)
+            .then((response) => {
+                const bubbleSystem = document.createElement("div");
+                bubbleSystem.className = "bubbleSystem";
+                bubbleSystem.innerHTML = `${response.choices[0].message.content}`;
+                console.log("🚀 ~ arrowButton.addEventListener ~ response:", response);
+                continerChat.appendChild(bubbleSystem);
+            })
+            
+        }
+        console.log(arrowButton);
+    });
+
+
     return viewIndividual;
 };
