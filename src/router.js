@@ -41,12 +41,9 @@ export const renderView = (pathname, props = {}) => {
 export const navigateTo = (pathname, props = {}) => {
  history.pushState({}, "", pathname);
  const apartRoot = pathname.split("?");
- console.log(apartRoot, "cortar");
  pathname = apartRoot[0];
- console.log("🚀 ~ navigateTo ~ pathname:", pathname)
  props = apartRoot[1];
  const propsObject = queryStringToObject(props);
- console.log("🚀 ~ navigateTo ~ propsObject:", propsObject)
  
 
   // const searchParams = new URLSearchParams();
