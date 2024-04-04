@@ -227,7 +227,10 @@ h4 {
     font-family: "Cabin Condensed";
     text-align: center;
 }
-.duende2
+.duende2 {
+    position: fixed;
+	z-index: 2;
+}
 .statsWindow {
     z-index: 2;
     position: fixed;
@@ -430,17 +433,18 @@ h4 {
     margin: 0 0 0 15rem;
 }
 .totoroParaguas {
-    width: 4rem;
-    height: 7rem;
+	width: 1.9rem;
+	height: 2.9rem;
 }
 .errorMessage {
-    font-size: ;
+    font-size: 0.8rem;
 }
 .error404 {
-    font-size: ;
+    font-size: 3rem;
 }
 .duende2 {
-    margin: 0 0 0 0;
+	margin: 10rem 0 0 0;
+	
 }
 /* Aquí comienza la vista de Error */
 /* Aquí comienza el estilo footer */
@@ -607,20 +611,21 @@ p {
 /* Aquí finaliza el estilo filters */
 /* Vista de error*/
 .duende1{
-    margin: ;
+    margin: 0 0 0 87%;
+	width: 10rem;
 }
 .totoroParaguas {
-    width: ;
-    height: ;
+    width: 5rem;
 }
 .errorMessage {
-    font-size: ;
+    font-size: 2rem;
 }
 .error404 {
-    font-size: ;
+    font-size: 7rem;
 }
 .duende2 {
-    width: ;
+    width: 10rem;
+	margin: 1rem 0 0 0;
 }
 /* Aquí comienza el estilo footer */
 footer {
