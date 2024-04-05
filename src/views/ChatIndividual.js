@@ -1,7 +1,7 @@
 import { returnHome } from "../components/ButtonHome.js";
 import { footer } from "../components/Footer.js";
 import data from '../data/dataset.js';
-//import { communicateWithOpenAI } from "../Lib/openAIApi.js";
+import { communicateWithOpenAI } from "../Lib/openAIApi.js";
 
 export const chatIndividual = (film) => {
     const viewIndividual = document.createElement("secction");
@@ -15,41 +15,44 @@ export const chatIndividual = (film) => {
     </div>
     <div class="conversationChat"></div>
     <div class="chat-box">
-    <input type="text" class="inputChat" placeholder="Escribe...">
+    <input type="text" id="inputChat" placeholder="Escribe...">
     <button class="sendMes"><i class="fas fa-location-arrow"></i></button>
     </div>
     `
     viewIndividual.appendChild(returnHome());
     viewIndividual.appendChild(footer())
 
-    const inputMessage = viewIndividual.querySelector(".inputChat");
+    const inputMessage = viewIndividual.querySelector("#inputChat");
+    console.log("🚀 ~ chatIndividual ~ inputMessage:", inputMessage)
     const arrowButton = viewIndividual.querySelector(".sendMes");
     const continerChat = viewIndividual.querySelector(".conversationChat");
 
     arrowButton.addEventListener("click", function() {
         const contentInput = inputMessage.value;
         
-        if(contentInput !== "") {
+        
+        // if(contentInput !== "") {
 
-            const bubbleUser = document.createElement("div");
-            const textBubble = document.createElement("p");
-            bubbleUser.className = "bubbleSpace";
-            textBubble.className = "messageUser"
-            textBubble.innerHTML = contentInput;
-            bubbleUser.appendChild(textBubble);
-            continerChat.appendChild(textBubble);
-            // contentInput.value = "";
-            
+        //     const bubbleUser = document.createElement("div");
+        //     const textBubble = document.createElement("p");
+        //     bubbleUser.className = "bubbleSpace";
+        //     textBubble.className = "messageUser"
+        //     textBubble.innerHTML = contentInput;
+        //     bubbleUser.appendChild(textBubble);
+        //     continerChat.appendChild(textBubble);
+        //     // contentInput.value = "";
+        console.log("🚀 ~ arrowButton.addEventListener ~ contentInput:", findFil)
             communicateWithOpenAI(contentInput, findFil)
             .then((response) => {
-                const bubbleSystem = document.createElement("div");
-                bubbleSystem.className = "bubbleSystem";
-                bubbleSystem.innerHTML = `${response.choices[0].message.content}`;
-                console.log("🚀 ~ arrowButton.addEventListener ~ response:", response);
-                continerChat.appendChild(bubbleSystem);
+                
+            //     const bubbleSystem = document.createElement("div");
+            //     bubbleSystem.className = "bubbleSystem";
+            //     bubbleSystem.innerHTML = `${response.choices[0].message.content}`;
+                 console.log("🚀 ~ arrowButton.addEventListener ~ response:", response);
+            //     continerChat.appendChild(bubbleSystem);
             })
             
-        }
+        //}
         console.log(arrowButton);
     });
 

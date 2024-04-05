@@ -1,19 +1,16 @@
 import { getApiKey } from "./apiKey.js";
 
-<<<<<<< HEAD
-export const communicateWithOpenAI = async(cardName, input) => {
-=======
-export const communicateWithOpenAI = async (cardName, input) => {
->>>>>>> ec791b4fb399c330c7712f793ae274554a4421c0
+export const communicateWithOpenAI = (cardName, input) => {
+
   //Aquí es donde debes implementar la petición con fetch o axios
   const api_key = getApiKey();
-  const apiURL = "https://api.openai.com/v1/chat/completions";
+  //const apiURL = "https://api.openai.com/v1/chat/completions";
 
-  const responseIA = await fetch(apiURL, {
+  return fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${api_key}`
+      "Authorization": "Bearer" + api_key
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -28,15 +25,29 @@ export const communicateWithOpenAI = async (cardName, input) => {
         },
       ],
     }),
-  });
-<<<<<<< HEAD
-  //return responseIA;
-  const respuesta = await responseIA.json()
-  console.log("🚀 ~ communicateWithOpenAI ~ respuesta:", respuesta)
-=======
+  })
 
-  console.log("🚀 ~ communicateWithOpenAI ~ system:", responseIA);
-  // return system;
->>>>>>> ec791b4fb399c330c7712f793ae274554a4421c0
+  console.log(cardName.name, "prueba")
+  //return responseIA;
+  //const respuesta = responseIA;
+  .then((result)=> {
+       return result.json();
+     })
+
+  .then((datafech)=>{
+       console.log(datafech);
+       return datafech;
+  }) 
+  .catch(error=>{
+    console.log(error);
+  })
 };
   
+//   //return responseIA;
+//   responseIA.then((result)=> {
+//     const formateresult = result.json();
+//     console.log(formateresult);
+//     formateresult.then ((jsobject)=>{
+//       console.log(jsobject);
+//     })
+//   })
