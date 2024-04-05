@@ -1,5 +1,6 @@
 import { navigateTo } from "../router.js";
 import { chatIndividual } from "../views/ChatIndividual.js";
+import { getApiKey } from "../Lib/apiKey.js";
 
 export const cards = (data) => {
 
@@ -59,9 +60,13 @@ export const cards = (data) => {
     });
     
     viewChatIndividual.addEventListener("click", function() {
-      const chatView = chatIndividual(film);
-      chatView.innerHTML = "";
-      navigateTo(`/chatIndividual?id=${film.id}`);
+      if(getApiKey()) {
+        const chatView = chatIndividual(film);
+        chatView.innerHTML = "";
+        navigateTo(`/chatIndividual?id=${film.id}`);
+      }else {
+        navigateTo("/api", {});
+      }
     });
 
   });

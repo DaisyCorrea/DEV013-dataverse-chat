@@ -19,6 +19,7 @@ export const apiK = () => {
 
   buttonApiKey.addEventListener("click", function () {
     setApiKey(inputApiKey.value);
+    inputApiKey.value = "";
   });
   return viewApi;
   
