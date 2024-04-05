@@ -1,6 +1,9 @@
 import { getApiKey } from "./apiKey.js";
 
-export const communicateWithOpenAI = (cardName, input) => {
+export const communicateWithOpenAI = (cardNameSystem, input) => {
+console.log("🚀 ~ communicateWithOpenAI ~ input:", input)
+console.log("🚀 ~ communicateWithOpenAI ~ cardName:", cardNameSystem);
+
 
   //Aquí es donde debes implementar la petición con fetch o axios
   const api_key = getApiKey();
@@ -10,37 +13,37 @@ export const communicateWithOpenAI = (cardName, input) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer" + api_key
+      "Authorization": "Bearer " + api_key
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
       messages: [
         {
           role: "system",
-          content: `Tú eres: ${cardName.name}, responde de manera breve, concisa y en primera persona. Nunca preguntes "¿En que puedo ayudarte hoy?".`
+          content: `Tú nombre es ${input} y eres una película de Studio Ghibli, no eres un asistente, responde de manera breve, concisa y en primera persona.`
         },
         {
           role: "user",
-          content: input,
+          content: cardNameSystem,
         },
       ],
     }),
   })
 
-  console.log(cardName.name, "prueba")
+  // console.log(cardName.name, "prueba")
   //return responseIA;
   //const respuesta = responseIA;
-  .then((result)=> {
-       return result.json();
-     })
+  // .then((result)=> {
+  //      return result.json();
+  //    })
 
-  .then((datafech)=>{
-       console.log(datafech);
-       return datafech;
-  }) 
-  .catch(error=>{
-    console.log(error);
-  })
+  // .then((datafech)=>{
+  //      console.log(datafech);
+  //      return datafech;
+  // }) 
+  // .catch(error=>{
+  //   console.log(error);
+  // })
 };
   
 //   //return responseIA;

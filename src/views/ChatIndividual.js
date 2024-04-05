@@ -30,32 +30,26 @@ export const chatIndividual = (film) => {
     arrowButton.addEventListener("click", function() {
         const contentInput = inputMessage.value;
         
-        
-        // if(contentInput !== "") {
+        if(contentInput !== "") {
+            const bubbleText = document.createElement("div");
+            bubbleText.className = "bubbleSpace";
+            bubbleText.innerHTML = contentInput;
+            continerChat.appendChild(bubbleText);
+            inputMessage.value = "";
 
-        //     const bubbleUser = document.createElement("div");
-        //     const textBubble = document.createElement("p");
-        //     bubbleUser.className = "bubbleSpace";
-        //     textBubble.className = "messageUser"
-        //     textBubble.innerHTML = contentInput;
-        //     bubbleUser.appendChild(textBubble);
-        //     continerChat.appendChild(textBubble);
-        //     // contentInput.value = "";
-        console.log("🚀 ~ arrowButton.addEventListener ~ contentInput:", findFil)
-            communicateWithOpenAI(contentInput, findFil)
+            communicateWithOpenAI(contentInput, findFil.name)
             .then((response) => {
-                
-            //     const bubbleSystem = document.createElement("div");
-            //     bubbleSystem.className = "bubbleSystem";
-            //     bubbleSystem.innerHTML = `${response.choices[0].message.content}`;
-                 console.log("🚀 ~ arrowButton.addEventListener ~ response:", response);
-            //     continerChat.appendChild(bubbleSystem);
+                return response.json()
             })
-            
-        //}
-        console.log(arrowButton);
-    });
 
+            .then((dataFech) => {
+                const bubbleSystem = document.createElement("div");
+                bubbleSystem.className = "bubbleSystem";
+                bubbleSystem.innerHTML = `${dataFech.choices[0].message.content}`;
+                continerChat.appendChild(bubbleSystem);
+            })
+        }
+    });
 
     return viewIndividual;
 };
