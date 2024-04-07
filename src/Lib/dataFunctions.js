@@ -49,7 +49,7 @@ export const computeStats = (data) => {
     stats[genre] = ((stats[genre] / totalMovies) * 100).toFixed(2) + "%";
   }
 
-  const statsText = Object.entries(stats).map(([genre, count]) => `${genre}: ${count}`).join("\n");
+  const statsText = Object.entries(stats).map(([genre, count]) => `${genre}: ${count}`).join("/n");
   return statsText;
 };
 

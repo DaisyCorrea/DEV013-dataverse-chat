@@ -36,7 +36,6 @@ export const cards = (data) => {
       </ul>
       </div>
       <button class="closeWindow">Ver menos</button>
-      <button class="chatBtnModal viewChat"><i class="fas fa-comment"></i></button>
       </section>
       <div class="modalFondo hiden"></div>
       `;

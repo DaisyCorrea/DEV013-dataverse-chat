@@ -15,15 +15,13 @@ export const chatIndividual = (film) => {
     </div>
     <div class="conversationChat"></div>
     <div class="chat-box">
-    <input type="text" id="inputChat" placeholder="Escribe...">
+    <input type="text" class="inputChat" placeholder="Escribe...">
     <button class="sendMes"><i class="fas fa-location-arrow"></i></button>
     </div>
     `
     viewIndividual.appendChild(returnHome());
-    viewIndividual.appendChild(footer())
-
-    const inputMessage = viewIndividual.querySelector("#inputChat");
-    console.log("🚀 ~ chatIndividual ~ inputMessage:", inputMessage)
+    
+    const inputMessage = viewIndividual.querySelector(".inputChat");
     const arrowButton = viewIndividual.querySelector(".sendMes");
     const continerChat = viewIndividual.querySelector(".conversationChat");
 
@@ -36,7 +34,7 @@ export const chatIndividual = (film) => {
             bubbleText.innerHTML = contentInput;
             continerChat.appendChild(bubbleText);
             inputMessage.value = "";
-
+            
             communicateWithOpenAI(contentInput, findFil.name)
             .then((response) => {
                 return response.json()
@@ -50,6 +48,7 @@ export const chatIndividual = (film) => {
             })
         }
     });
-
+    viewIndividual.appendChild(footer());
+    
     return viewIndividual;
 };
