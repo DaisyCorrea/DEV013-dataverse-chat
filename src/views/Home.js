@@ -13,12 +13,12 @@ import {
 export const home = () => {
   const viewHome = document.createElement("main");
   const newData = [...data];
+  const movieCards = cards(newData);
   viewHome.appendChild(header());
   viewHome.appendChild(menuSection());
-  viewHome.appendChild(cards(newData));
+  viewHome.appendChild(movieCards);
   viewHome.appendChild(footer());
 
-  const movieCards = viewHome.querySelector(".list");
   const movieSearch = viewHome.querySelector(".movie-search");
   const gendersFilms = viewHome.querySelector("#filter");
   const orderFilms = viewHome.querySelector("#order");
@@ -29,9 +29,6 @@ export const home = () => {
   const closeStats = viewHome.querySelector(".closeStats");
   const statsFondo = viewHome.querySelector(".statsFondo");
   const cleanerButton = viewHome.querySelector(".cleanerButton");
-  //const chatButton = viewHome.querySelector(".chatBtn");
-
-  movieCards.appendChild(cards(newData));
 
   movieSearch.addEventListener("input", function () {
     const results = [];

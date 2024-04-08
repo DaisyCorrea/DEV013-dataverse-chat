@@ -2,12 +2,12 @@ export const api = () => {
   const apiEl = document.createElement("div");
   apiEl.setAttribute("class", "api");
   apiEl.innerHTML = `
-  <h3>Api Key</h3>
-  <p>Si quieres acceder al chat Individual, ingresa la Api Key</p>
+  <h3 class="apiTittle">Api Key</h3>
+  <p class="paragraph">Si quieres acceder al chat Individual, ingresa la Api Key</p>
   <div class="sectionApi">
-  <input type="text" class="inputApi" placeholder="Ingresa la Api Key">
+  <input type="text" class="inputApi" placeholder="Ingresa la API KEY...">
   <button class="apiSaveButton">Guardar</button>
-  <p>¿No tienes una Api Key? Haz click aquí</p>
+  <p class="paragraph1">¿No tienes una Api Key? Haz click aquí</p>
   </div>
   `;
   return apiEl;

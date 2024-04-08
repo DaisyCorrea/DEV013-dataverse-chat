@@ -5,8 +5,8 @@ import { getApiKey, setApiKey } from "../Lib/apiKey.js";
 
 export const apiK = () => {
   const viewApi = document.createElement("div");
-  viewApi.appendChild(returnHome());
   viewApi.appendChild(api());
+  viewApi.appendChild(returnHome());
   viewApi.appendChild(footer());
 
   const inputApiKey = viewApi.querySelector(".inputApi");
@@ -19,6 +19,7 @@ export const apiK = () => {
 
   buttonApiKey.addEventListener("click", function () {
     setApiKey(inputApiKey.value);
+    inputApiKey.value = "";
   });
   return viewApi;
   
