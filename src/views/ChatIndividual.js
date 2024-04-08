@@ -30,7 +30,7 @@ export const chatIndividual = (film) => {
         
         if(contentInput !== "") {
             const bubbleText = document.createElement("div");
-            bubbleText.className = "bubbleSpace";
+            bubbleText.className = "bubbleSpace bubble";
             bubbleText.innerHTML = contentInput;
             continerChat.appendChild(bubbleText);
             inputMessage.value = "";
@@ -42,7 +42,7 @@ export const chatIndividual = (film) => {
 
             .then((dataFech) => {
                 const bubbleSystem = document.createElement("div");
-                bubbleSystem.className = "bubbleSystem";
+                bubbleSystem.className = "bubbleSystem bubble";
                 bubbleSystem.innerHTML = `${dataFech.choices[0].message.content}`;
                 continerChat.appendChild(bubbleSystem);
             })

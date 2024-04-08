@@ -246,6 +246,14 @@ h4 {
 .chat-box {
     display: grid;
 }
+.bubbleSpace {
+    background-color: var(--blue);
+    color: var(--white);
+}
+.bubbleSystem {
+    background-color: var(--dark-grey);
+    color: var(--white);
+}
 .inputChat {
     background-color: var(--grey);
     border-radius: 5rem;
@@ -348,6 +356,7 @@ h1 {
 	font-size: 0.6em;
 	padding: 0 0 0 1rem;
 	margin: 1.1rem -94% 0 0;
+
 }
 /* Aquí finaliza el Header */
 /* Aquí comienza el estilo Filters */
@@ -484,16 +493,32 @@ h4 {
 	width: 94%;
 	height: 33rem;
 	margin: 0 0.8rem;
+    padding: 0.5rem;
+}
+.bubble {
+	padding: 0.5rem;
+	position: relative;
+	width: 55%;
+	font-size: 0.8em;
+	z-index: 1;
+}
+.bubbleSpace {
+	margin: 0.2rem 0 0.2rem 45%;
+	border-radius: 1rem 1rem 0 1rem;
+}
+.bubbleSystem {
+	margin: 0.5rem 0;
+	border-radius: 1rem 1rem 1rem 0;
 }
 .inputChat {
-	margin: -1.5rem 8.5rem;
+	margin: -1.5rem 4%;
 	padding: 0.2rem 0 0 1.5rem;
-	width: 80%;
-	height: 3.6rem;
-	font-size: 1.1em;
+	width: 94%;
+	height: 2.5rem;
+	font-size: 0.8em;
 }
 .sendMes {
-	margin: -1.8rem 0 0 23.3rem;
+	margin: -1.3rem 0 0 87.5%;
 	width: 2.2rem;
 	height: 2.2rem;
 }
@@ -726,16 +751,32 @@ h4 {
 	width: 80%;
 	height: 25rem;
 	margin: auto;
+    padding: 1rem;
+}
+.bubble {
+	padding: 1rem;
+	position: relative;
+	width: 55%;
+	font-size: 1.1em;
+	z-index: 1;
+}
+.bubbleSpace{
+    margin: 0.5rem 0 0.5rem 45%;
+	border-radius: 2rem 2rem 0 2rem;
+}
+.bubbleSystem {
+    margin: 1rem 0;
+	border-radius: 2rem 2rem 2rem 0;
 }
 .inputChat {
-	margin: -1.5rem 8.5rem;
+	margin: -1.5rem auto;
 	padding: 0.2rem 0 0 1.5rem;
 	width: 80%;
 	height: 3.6rem;
 	font-size: 1.1em;
 }
 .sendMes {
-	margin: -2.2rem 0 0 73.7rem;
+	margin: -2.2rem 0 0 86%;
 	width: 3rem;
 	height: 3rem;
 }
