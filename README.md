@@ -38,7 +38,8 @@ maestras del cine animado japonés, todo ello en un entorno digital
 diseñado con amor y dedicación.
 
 Bienvenidos a nuestro rincón virtual del mundo de Ghibli.
-/////(https://es.wikipedia.org/wiki/Single-page_application),
+
+![alt Pantalla Principal](<Captura pantalla principal escritorio.png>)
 
 ## 2. Funcionalidades
 
@@ -59,7 +60,7 @@ funcionalidad a continuación:
 * CHAT INDIVIDUAL: Vista para ingresar a un chat con la película seleccionada
   y poder interactuar preguntando los datos que sean de curiosidad de la usuaria.
 
-  ////// [Casillo en el Cielo](https://es.wikipedia.org/wiki/Ada_Lovelace)
+![alt Chat Individual](<Captura ChatApi Escritorio.png>)
   
 ```text
 Usuaria: "Hola, Casillo en el cielo, ayúdame con una descripción de la película."
@@ -73,7 +74,6 @@ Usuaria: "¿En qué año estrenaste?"
 
 Casillo en el cielo (AI de OpenAI): " Estrené en 1986."
 ```
-/////// captura pantalla
 
 ## 3. Estructura del proyecto
 
@@ -139,18 +139,18 @@ suaves para la vista.
 
 Criterios mínimos de aceptación
 
-      + Correcta funcionalidad.
-      + Una buena experiencia de usuaria.
-      + Que tenga un menú hamburguesa con el filtrado por género, ordenado 
+      - Correcta funcionalidad.
+      - Una buena experiencia de usuaria.
+      - Que tenga un menú hamburguesa con el filtrado por género, ordenado 
         de forma asc y des y la estadística.
-      + Colores suaves que contrasten con las imagenes de las peliculas, de 
+      - Colores suaves que contrasten con las imagenes de las peliculas, de 
         diseño agradable.
 
 Definición de terminado 
   
-     + Las opciones del menú y el buscador, funcionen correctamente.
-     + Que el menú contenga opciones de filtrado, ordenado y estadísticas.
-     + Que la paleta de colores sea suave y colores claros.
+     - Las opciones del menú y el buscador, funcionen correctamente.
+     - Que el menú contenga opciones de filtrado, ordenado y estadísticas.
+     - Que la paleta de colores sea suave y colores claros.
 
 Historia de Usuaria N°2
 
@@ -158,16 +158,16 @@ Yo como aficionada de Studio Ghibli espero poder chatear con las películas.
 
 Criterios de aceptación:
  
-    + Un botón que te lleve a un chat individual para cada película 
-    + Un botón que me dirija a un chat grupal, con todas las películas.
-    + Con un botón para ingresar a la API Key.
-    + Una vista creativa que muestre error.
+    - Un botón que te lleve a un chat individual para cada película 
+    - Un botón que me dirija a un chat grupal, con todas las películas.
+    - Con un botón para ingresar a la API Key.
+    - Una vista creativa que muestre error.
     
 Definición de terminado
 
-    + Debe contener un botón para chat individual, para chat grupal y un botón 
+    - Debe contener un botón para chat individual, para chat grupal y un botón 
       para ingresar a la API Key.
-    + Una vista ingeniosa para la vista del error.
+    - Una vista ingeniosa para la vista del error.
 
 
 Luego de establecer historias de usuaria se planificó con ayuda de la 
