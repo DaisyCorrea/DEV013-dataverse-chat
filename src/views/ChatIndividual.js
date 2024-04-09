@@ -36,7 +36,7 @@ export const chatIndividual = (film) => {
             
             communicateWithOpenAI(contentInput, findFil.name)
             .then((response) => {
-                return response.json()
+                return response;
             })
 
             .then((dataFech) => {
