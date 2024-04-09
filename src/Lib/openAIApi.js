@@ -1,5 +1,6 @@
 import { getApiKey } from "./apiKey.js";
 
+
 export const communicateWithOpenAI = (input, cardNameSystem) => {
   const api_key = getApiKey();
 
@@ -23,12 +24,14 @@ export const communicateWithOpenAI = (input, cardNameSystem) => {
       ],
     }),
   })
-  .then((result)=> {
-       console.log("🚀 ~ .then ~ result:", result);
-       return result;
+  .then((result) => {
+    if (!result.ok) {
+      throw new Error('Hay un error con la respuesta');
+    }
+    return result.json();
      })
-  .catch(error=>{
-    console.log(error);
+  .catch((error) => {
+    throw new Error("Hubo un error con Fetch", error);
   })
 };
 

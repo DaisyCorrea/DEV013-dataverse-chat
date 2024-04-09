@@ -1,7 +1,7 @@
-import { header } from "../src/components/Heade";
-import { returnHome } from "../src/components/ButtonHome";
-import { api } from "../src/components/divAPI";
-import { footer } from "../src/components/Footer";
+import { header } from "../src/components/Header.js";
+import { returnHome } from "../src/components/ButtonHome.js";
+import { api } from "../src/components/divAPI.js";
+import { footer } from "../src/components/Footer.js";
 
 const fakeRouter = require("../src/router.js");
 const spyRouter = jest.spyOn(fakeRouter, "navigateTo");
@@ -51,12 +51,12 @@ describe("returnHome fuction", () => {
 
 describe("api fuction", () => {
     const apiEl = `
-<h3>Api Key</h3>
-  <p>Si quieres acceder al chat Individual, ingresa la Api Key</p>
+  <h3 class="apiTittle">Api Key</h3>
+  <p class="paragraph">Si quieres acceder al chat Individual, ingresa la Api Key</p>
   <div class="sectionApi">
-  <input type="text" class="inputApi" placeholder="Ingresa la Api Key">
+  <input type="text" class="inputApi" placeholder="Ingresa la API KEY...">
   <button class="apiSaveButton">Guardar</button>
-  <p>¿No tienes una Api Key? Haz click aquí</p>
+  <p class="paragraph1">¿No tienes una Api Key? Haz click aquí</p>
   </div>
     `
     it("retorna la estructura html de la vista APIKEY", () => {
