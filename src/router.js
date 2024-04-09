@@ -19,7 +19,6 @@ export const setRoutes = (routes) => {
 export const queryStringToObject = (queryString) => {
   const urlParams = new URLSearchParams(queryString);
   const queryParams = {}; //// Convertir URLSearchParams a un objeto
-  console.log("🚀 ~ queryStringToObject ~ queryParams:", queryParams)
   for (const [key, value] of urlParams) {
     queryParams[key] = value;
   }

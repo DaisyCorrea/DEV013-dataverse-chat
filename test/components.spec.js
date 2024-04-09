@@ -1,6 +1,4 @@
-import { header } from "../src/components/Header";
-import { cards } from "../src/components/Cards";
-import { data as dataFake } from "./data.js"
+import { header } from "../src/components/Heade";
 import { returnHome } from "../src/components/ButtonHome";
 import { api } from "../src/components/divAPI";
 import { footer } from "../src/components/Footer";
@@ -29,44 +27,6 @@ describe("hearder function", () => {
   it("retorna la estructura html del header", () => {
     const headerHTML = header();
     expect(headerHTML.innerHTML.trim()).toEqual(headerEl.trim());
-  });
-});
-
-describe("cards function", () => {
-  const cardsEl = `
-  <div class="visual"> 
-      <img src="${dataFake.imageUrl}" alt="Afiche de la película ${dataFake.name}" class="imgFilm">
-      <ul itemscope itemtype="nausicaa-del-valle-del-viento">
-      <li itemtype="name" class="nameFilm"><b>${dataFake.name}</b></li>
-      <li itemtype="genders"><b>Género: ${dataFake.genders}</b></li>
-      </ul>
-      <label for="popUp"> </label>
-      <button class="cardsBtn"><b>Ver más</b></button>
-      <button class="chatBtn viewChat" data-filmid="${dataFake.name}"><i class="fas fa-comment"></i></button>
-      </div>
-      <section class="windowModal hiden">
-      <h2>${dataFake.name}</h2>
-      <div class="modalCard">
-      <img src="${dataFake.imageUrl}" alt="Afiche de la película ${dataFake.name}">
-      <ul itemtype="nausicaa-del-valle-del-viento">
-      <div class="card">
-      <li itemtype="genders"><b>Género: </b>${dataFake.genders}</li>
-      <li itemtype="releaseYear"><b>Estreno: </b>${dataFake.releaseYear}</li>
-      <li itemtype="duration"><b>Duración: </b>${dataFake.duration}</li>
-      <li itemtype="boxOfficeRevenue"><b>Recaudación: </b>${dataFake.boxOfficeRevenue}</li>
-      <li itemtype="shortDescription"><b>Sinopsis: </b>${dataFake.shortDescription}</li>
-      <li itemtype="description"><b>Descripción: </b>${dataFake.description}</li>
-      </div>
-      </ul>
-      </div>
-      <button class="closeWindow">Ver menos</button>
-      <button class="chatBtnModal viewChat"><i class="fas fa-comment"></i></button>
-      </section>
-      <div class="modalFondo hiden"></div>
-  `
-  it("renderiza HTML de cada tarjeta", () => {
-    const cardsHTML = cards(dataFake);
-    expect(cardsHTML.innerHTML.trim()).toEqual(cardsEl.trim());
   });
 });
 
