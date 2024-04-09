@@ -17,8 +17,7 @@ export const chatIndividual = (film) => {
     <div class="chat-box">
     <input type="text" class="inputChat" placeholder="Escribe...">
     <button class="sendMes"><i class="fas fa-location-arrow"></i></button>
-    </div>
-    `
+    </div> `
     viewIndividual.appendChild(returnHome());
     
     const inputMessage = viewIndividual.querySelector(".inputChat");
@@ -43,7 +42,7 @@ export const chatIndividual = (film) => {
             .then((dataFech) => {
                 const bubbleSystem = document.createElement("div");
                 bubbleSystem.className = "bubbleSystem bubble";
-                bubbleSystem.innerHTML = `${dataFech.choices[0].message.content}`;
+                bubbleSystem.innerHTML = dataFech.choices[0].message.content;
                 continerChat.appendChild(bubbleSystem);
             })
         }
